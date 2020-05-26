@@ -4,12 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>redeau</title>
+<title>rideau</title>
 </head>
 <body>
-<p>ログイン完了画面です。${sessionScope.email }</p>
-<a href = "/rideau/Login">トップへ</a>
-
-
+<p>登録完了しました</p>
+<a href = "/rideau/Login">続けてログイン</a>
 </body>
 </html>

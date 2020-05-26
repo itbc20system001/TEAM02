@@ -4,12 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>redeau</title>
+<title>rideau</title>
 </head>
 <body>
 <form action = "/rideau/SignUp" method = "post">
 Emailアドレス:<input type = "text" name = "email"><br>
-パスワード:<input type = "password" name = "pass"><br>
+パスワード:<input type = "password" name = "password"><br>
 氏名:<input type = "text" name = "name"><br>
 住所:<input type = "text" name = "address"><br>
 <input type = "submit" value = "登録">

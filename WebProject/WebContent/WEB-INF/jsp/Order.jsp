@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="model.CreditCard" %>
+    <%
+    CreditCard c = (CreditCard) request.getAttribute("creditCard");
+    %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +28,7 @@
 
 <h1>ご請求情報</h1><br>
 ご請求先：お届け先と同じ<br>
-お支払い方法：クレジットカード決済(下４桁：1234)
+お支払い方法：クレジットカード決済(<%=c.getCreditCard() %>)
 
 
 

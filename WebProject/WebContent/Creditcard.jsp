@@ -10,7 +10,7 @@
 <h1>クレジットカード情報入力</h1>
 <form action = "/rideau/Order" method = "post">
 <label>クレジットカード番号：</label>
-<input type = "tel" name="Creditcard" size="16" maxlength="16"><br>
+<input type = "text" name="creditCard" size="16" maxlength="16"><br>
 <label>クレジットカード有効期限</label>
 <select name = month>
 <option value="January">1</option>

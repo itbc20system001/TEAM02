@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>クレジットカード情報入力</h1>
-<form acction = "/Rideau/OrderConfirmation" method = "GET">
+<form action = "/rideau/Order" method = "post">
 <label>クレジットカード番号：</label>
 <input type = "tel" name="Creditcard" size="16" maxlength="16"><br>
 <label>クレジットカード有効期限</label>
@@ -44,8 +44,8 @@
 <input type = "tel" name="Security" size="3" maxlength="3"><br>
 <label>名義</label>
 <input type="text">
+<input type="submit" value="完了（注文内容確認へ）">
 </form>
-<a href ="/Rideau/OrderConfirmation.jsp">完了（注文内容確認へ）</a><br>
 <a href = "/Rideau/Cart.jsp">カートへ</a><br>
 
 

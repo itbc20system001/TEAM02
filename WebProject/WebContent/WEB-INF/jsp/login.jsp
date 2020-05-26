@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>redeau</title>
+<title>rideau</title>
 </head>
 <body>
 <form action = "/rideau/Login" method = "post">

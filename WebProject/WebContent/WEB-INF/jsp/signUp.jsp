@@ -8,7 +8,7 @@
 </head>
 <body>
 <form action = "/rideau/SignUp" method = "post">
-e-mailアドレス:<input type = "text" name = "email"><br>
+Emailアドレス:<input type = "text" name = "email"><br>
 パスワード:<input type = "password" name = "pass"><br>
 氏名:<input type = "text" name = "name"><br>
 住所:<input type = "text" name = "address"><br>

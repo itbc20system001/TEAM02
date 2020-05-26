@@ -8,11 +8,11 @@
 </head>
 <body>
 <form action = "/rideau/Login" method = "post">
-e-mailアドレス:<input type = "text" name = "email"><br>
+Emailアドレス:<input type = "text" name = "email"><br>
 パスワード:<input type = "password" name = "password"><br>
 <input type = "submit" value = "ログイン">
 </form>
-<a href = "/Redeau/SignUp">会員登録はこちら</a>
+<a href = "/rideau/SignUp">会員登録はこちら</a>
 
 </body>
 </html>

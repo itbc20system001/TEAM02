@@ -46,7 +46,7 @@
 <input type="text">
 <input type="submit" value="完了（注文内容確認へ）">
 </form>
-<a href = "/Rideau/Cart.jsp">カートへ</a><br>
+<a href = "/WEB-INF/jsp/Cart.jsp">カートへ</a><br>
 
 
 

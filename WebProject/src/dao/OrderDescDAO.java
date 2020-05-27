@@ -32,19 +32,19 @@ public class OrderDescDAO implements DBConfig{
         try {
             conn = DriverManager.getConnection(JDBC_URL,DB_USER,DB_PASS);
 
-            String sql = "INSERT INTO order_desc (order_desc_id,order_id,quantity,pattern_cd,size_price_cd,price,liner_flg,hook_flg) VALUES (?,?,?,?,?,?,?,?);";
+            String sql = "INSERT INTO order_desc (order_id,quantity,pattern_cd,size_price_cd,price,liner_flg,hook_flg) VALUES (?,?,?,?,?,?,?,?);";
 
 
             PreparedStatement pStmt=conn.prepareStatement(sql);
 
-            pStmt.setInt(1,orderDesc.getOrder_desc_id());
-            pStmt.setInt(2,orderDesc.getOrder_id());
-            pStmt.setInt(3,orderDesc.getQuantity());
-            pStmt.setInt(4,orderDesc.getPattern_cd());
-            pStmt.setInt(5,orderDesc.getSize_price_cd());
-            pStmt.setInt(6,orderDesc.getPrice());
-            pStmt.setBoolean(7,orderDesc.isLiner_flg());
-            pStmt.setBoolean(8,orderDesc.isHook_flg());
+
+            pStmt.setInt(1,orderDesc.getOrder_id());
+            pStmt.setInt(2,orderDesc.getQuantity());
+            pStmt.setInt(3,orderDesc.getPattern_cd());
+            pStmt.setInt(4,orderDesc.getSize_price_cd());
+            pStmt.setInt(5,orderDesc.getPrice());
+            pStmt.setBoolean(6,orderDesc.isLiner_flg());
+            pStmt.setBoolean(7,orderDesc.isHook_flg());
 
             //実行
             System.out.println(pStmt.executeUpdate());
@@ -79,7 +79,7 @@ public class OrderDescDAO implements DBConfig{
         try {
             conn = DriverManager.getConnection(JDBC_URL,DB_USER,DB_PASS);
 
-            String sql = "SELECT * FROM order_desc WHERE po_id=?";
+            String sql = "SELECT * FROM order_desc WHERE order_id=?";
 
 
             PreparedStatement pStmt=conn.prepareStatement(sql);

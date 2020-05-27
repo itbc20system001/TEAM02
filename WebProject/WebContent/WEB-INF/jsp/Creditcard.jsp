@@ -46,7 +46,11 @@
 <input type="text">
 <input type="submit" value="完了（注文内容確認へ）">
 </form>
+<<<<<<< HEAD
+<a href = "/rideau/Cart.jsp">カートへ</a><br>
+=======
 <a href = "/WEB-INF/jsp/Cart.jsp">カートへ</a><br>
+>>>>>>> refs/remotes/origin/master
 
 
 

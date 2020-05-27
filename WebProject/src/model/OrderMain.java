@@ -19,6 +19,13 @@ public class OrderMain implements Serializable{
 		this.order_date = order_date;
 	}
 
+	public OrderMain(int user_id, int total, String order_date) {
+		super();
+		this.user_id = user_id;
+		this.total = total;
+		this.order_date = order_date;
+	}
+
 	public int getOrder_id() {
 		return order_id;
 	}

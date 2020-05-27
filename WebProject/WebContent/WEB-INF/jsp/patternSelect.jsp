@@ -60,7 +60,7 @@ section {
     <section id="100135">要素2</section>
 
     <section id="100140">要素3</section>
-  <form name="form1" action="/rideau/Cart" method="post">
+  <form name="form1" action="/rideau/Cart" method="get">
     <div class="selection-group">
       <input id="a" type="radio" name="rate" value="a"> <label for="a"> <img src="//placehold.it/90x90">
       </label> <input id="b" type="radio" name="rate" value="b"> <label for="b"> <img src="//placehold.it/90x90">

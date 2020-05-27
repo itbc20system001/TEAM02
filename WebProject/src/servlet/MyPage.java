@@ -15,7 +15,7 @@ public class MyPage extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//フォワード先
-		String fowardPath = null;
+		String forwardPath = null;
 
 		//サーブレットクラスの動作を決定する「action」の値を
 		//リクエストパラメーターから取得
@@ -23,12 +23,14 @@ public class MyPage extends HttpServlet {
 
 		//フォワード先の設定
 		if(action == null) {
-			fowardPath = "/WEB-INF/jsp/myPage.jsp";
+			forwardPath = "/WEB-INF/jsp/myPage.jsp";
 		} else if(action.equals("change")) {
-			fowardPath = "/WEB-INF/jsp/RegistrationChange.jsp";
+			forwardPath = "/WEB-INF/jsp/RegistrationChange.jsp";
+		} else if(action.equals("review")) {
+			forwardPath = "/WEB-INF/jsp/review.jsp";
 		}
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher(fowardPath);
+		RequestDispatcher dispatcher = request.getRequestDispatcher(forwardPath);
 		dispatcher.forward(request, response);
 	}
 

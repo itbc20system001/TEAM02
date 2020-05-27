@@ -10,6 +10,8 @@ public class MyPageDao {
 	private final String JDBC_URL = "jdbc:mariadb://localhost/docotsubu";
 	private final String DB_USER = "root";
 	private final String DB_PASS = "insource.2015it";
+	
+	public
 
 
 	// データベースに接続

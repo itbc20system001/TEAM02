@@ -4,42 +4,42 @@ import java.io.Serializable;
 
 //アカウント情報
 public class User implements Serializable {
-	private int userId; //自動連番
+	private int user_id; //自動連番
 	private String email; //Emailアドレス
 	private String password; //パスワード
-	private String userName; //氏名
+	private String user_nm; //氏名
 	private String address; //住所
 
 
 	public User() {
 	}
 
-	public User(int userId, String email, String password, String userName, String address) {
-		this.userId = userId;
+
+	public User(int user_id, String email, String password, String user_nm, String address) {
+		this.user_id = user_id;
 		this.email = email;
 		this.password = password;
-		this.userName = userName;
+		this.user_nm = user_nm;
 		this.address = address;
 	}
 
 
-	public User(String email, String password, String userName, String address) {
+	public User(String email, String password, String user_nm, String address) {
 		this.email = email;
 		this.password = password;
-		this.userName = userName;
+		this.user_nm = user_nm;
 		this.address = address;
 	}
 
-	public int getUserId() {
-		return userId;
+
+	public int getUser_id() {
+		return user_id;
 	}
 
 
-
-	public void setUserId(int userId) {
-		this.userId = userId;
+	public void setUser_id(int user_id) {
+		this.user_id = user_id;
 	}
-
 
 
 	public String getEmail() {
@@ -47,11 +47,9 @@ public class User implements Serializable {
 	}
 
 
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
 
 
 	public String getPassword() {
@@ -59,23 +57,19 @@ public class User implements Serializable {
 	}
 
 
-
 	public void setPassword(String password) {
 		this.password = password;
 	}
 
 
-
-	public String getUserName() {
-		return userName;
+	public String getUser_nm() {
+		return user_nm;
 	}
 
 
-
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUser_nm(String user_nm) {
+		this.user_nm = user_nm;
 	}
-
 
 
 	public String getAddress() {
@@ -83,11 +77,9 @@ public class User implements Serializable {
 	}
 
 
-
 	public void setAddress(String address) {
 		this.address = address;
 	}
-
 
 
 

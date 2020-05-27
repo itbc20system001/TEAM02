@@ -11,4 +11,11 @@ public class LoginLogic {
 
 	}
 
+	public User findUser(LoginModel login) {
+		UserDAO dao = new UserDAO();
+		User user = dao.findByLogin(login);
+		return user;
+
+	}
+
 }

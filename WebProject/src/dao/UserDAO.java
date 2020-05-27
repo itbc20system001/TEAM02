@@ -12,7 +12,7 @@ import model.User;
 
 public class UserDAO {
 	//データベース接続に使用する情報
-	private final String JDBC_URL="jdbc:mariadb://localhost/test_db";
+	private final String JDBC_URL="jdbc:mariadb://localhost/rideau";
 	private final String DB_USER = "root";
 	private final String DB_PASS = "insource.2015it";
 
@@ -45,12 +45,12 @@ public class UserDAO {
 			//そのユーザーを表すAccountインスタンスを生成
 			if(rs.next()) {
 				//結果表からデータを取得
-				String userId = rs.getString("user_id");
+				String user_id = rs.getString("user_id");
 				String email = rs.getString("email");
 				String password = rs.getString("password");
-				String userName = rs.getString("user_nm");
+				String user_nm = rs.getString("user_nm");
 				String address = rs.getString("address");
-				user = new User( Integer.parseInt(userId), email, password ,userName,address);
+				user = new User( Integer.parseInt(user_id), email, password ,user_nm,address);
 			}
 
 
@@ -81,7 +81,7 @@ public class UserDAO {
 			//INSERT文中の「?」に使用する値を設定しSQLを完成
 			pStmt.setString(1, user.getEmail());
 			pStmt.setString(2, user.getPassword());
-			pStmt.setString(3, user.getUserName());
+			pStmt.setString(3, user.getUser_nm());
 			pStmt.setString(4, user.getAddress());
 
 			//INSERT文を実行(resultには追加された行数が代入される)

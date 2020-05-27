@@ -6,4 +6,3 @@ public interface DBConfig {
     final String DB_USER="root";
     final String DB_PASS="insource.2015it";
 }
-

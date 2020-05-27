@@ -3,42 +3,54 @@ package model;
 import java.io.Serializable;
 
 public class Pattern implements Serializable {
-	int patternId;
-	String patternName;	//柄の名前
-	int color;	//色番号
+	private int pattern_cd;//柄番号
+	private String pattern_nm;//柄名
+	private String pattern_detail;//柄の説明
+	private String pattern_img;//柄のURL
+
 
 	public Pattern() {
 	}
 
-	public Pattern(int patternId, String patternName, int color) {
-		this.patternId = patternId;
-		this.patternName = patternName;
-		this.color = color;
+	public Pattern(int pattern_cd, String pattern_nm, String pattern_detail, String pattern_img) {
+		this.pattern_cd = pattern_cd;
+		this.pattern_nm = pattern_nm;
+		this.pattern_detail = pattern_detail;
+		this.pattern_img = pattern_img;
 	}
 
-	public int getPatternId() {
-		return patternId;
+	public int getPattern_cd() {
+		return pattern_cd;
 	}
 
-	public void setPatternId(int patternId) {
-		this.patternId = patternId;
+	public void setPattern_cd(int pattern_cd) {
+		this.pattern_cd = pattern_cd;
 	}
 
-	public String getPatternName() {
-		return patternName;
+	public String getPattern_nm() {
+		return pattern_nm;
 	}
 
-	public void setPatternName(String patternName) {
-		this.patternName = patternName;
+	public void setPattern_nm(String pattern_nm) {
+		this.pattern_nm = pattern_nm;
 	}
 
-	public int getColor() {
-		return color;
+	public String getPattern_detail() {
+		return pattern_detail;
 	}
 
-	public void setColor(int color) {
-		this.color = color;
+	public void setPattern_detail(String pattern_detail) {
+		this.pattern_detail = pattern_detail;
 	}
+
+	public String getPattern_img() {
+		return pattern_img;
+	}
+
+	public void setPattern_img(String pattern_img) {
+		this.pattern_img = pattern_img;
+	}
+
 
 
 }

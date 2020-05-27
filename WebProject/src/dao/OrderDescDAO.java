@@ -46,7 +46,7 @@ public class OrderDescDAO implements DBConfig{
             pStmt.setBoolean(6,orderDesc.isLiner_flg());
             pStmt.setBoolean(7,orderDesc.isHook_flg());
 
-            //実行
+//            実行
             System.out.println(pStmt.executeUpdate());
             pStmt.close();                         // Close Statement
             return orderDesc;

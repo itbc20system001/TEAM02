@@ -39,16 +39,17 @@ public class Login extends HttpServlet {
 
 		//ログイン処理の成否によって処理を分岐
 		if(result) {//ログイン成功時
-			//セッションスコープにユーザIDを保存
+			//セッションスコープにuserを保存
 
 			HttpSession session = request.getSession();
 			session.setAttribute("user",bo.findUser(login) );
+			session.removeAttribute("errorMsg");
 
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/loginOK.jsp");
 			dispatcher.forward(request, response);
 
 		}else {//ログイン失敗時
-
+			request.setAttribute("errorMsg","ユーザーIDもしくはパスワードが間違っています。");
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
 			dispatcher.forward(request, response);
 

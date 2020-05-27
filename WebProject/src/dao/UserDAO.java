@@ -12,7 +12,7 @@ import model.User;
 
 public class UserDAO {
 	//データベース接続に使用する情報
-	private final String JDBC_URL="jdbc:mariadb://localhost/test_db";
+	private final String JDBC_URL="jdbc:mariadb://localhost/rideau";
 	private final String DB_USER = "root";
 	private final String DB_PASS = "insource.2015it";
 

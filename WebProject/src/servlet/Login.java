@@ -27,19 +27,22 @@ public class Login extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//リクエストパラメーターの取得
 		request.setCharacterEncoding("UTF-8");
+
 		String email = request.getParameter("email");
-		String pass = request.getParameter("password");
+		String password = request.getParameter("password");
+
 
 		//ログイン処理の実行
-		LoginModel login = new LoginModel(email, pass);
+		LoginModel login = new LoginModel(email, password);
 		LoginLogic bo = new LoginLogic();
 		boolean result = bo.execute(login);
 
 		//ログイン処理の成否によって処理を分岐
 		if(result) {//ログイン成功時
 			//セッションスコープにユーザIDを保存
+
 			HttpSession session = request.getSession();
-			session.setAttribute("email", email);
+			session.setAttribute("user",bo.findUser(login) );
 
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/loginOK.jsp");
 			dispatcher.forward(request, response);

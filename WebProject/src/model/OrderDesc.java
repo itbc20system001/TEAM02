@@ -30,6 +30,18 @@ public class OrderDesc implements Serializable{
 		this.hook_flg = hook_flg;
 	}
 
+	public OrderDesc(int order_id, int quantity, int pattern_cd, int size_price_cd, int price,
+			boolean liner_flg, boolean hook_flg) {
+		super();
+		this.order_id = order_id;
+		this.quantity = quantity;
+		this.pattern_cd = pattern_cd;
+		this.size_price_cd = size_price_cd;
+		this.price = price;
+		this.liner_flg = liner_flg;
+		this.hook_flg = hook_flg;
+	}
+
 	public int getOrder_desc_id() {
 		return order_desc_id;
 	}
@@ -96,6 +108,6 @@ public class OrderDesc implements Serializable{
 
 
 
-
+//
 
 }

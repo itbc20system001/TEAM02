@@ -4,6 +4,7 @@
 <%@ page import="model.CreditCard"%>
 <%
 	CreditCard c = (CreditCard) request.getAttribute("creditCard");
+    int totalPrice = (Integer) session.getAttribute("totalPrice");
 	ArrayList<Cart> cartList = (ArrayList<Cart>) session.getAttribute("cartList");
 %>
 
@@ -59,14 +60,14 @@
   <%
   	}
   %>
-  <p>合計金額：～</p>
+  <p>合計金額：<%=totalPrice%>円</p>
 
   <h1>お届け情報</h1>
   <br>
   <p>お届け先</p>
   <br> ~~~~~~~~ ~~~~~~~~
   <p>配送方法</p>
-  <br> ~~~~~~~ ~~~~~~~
+  <br> 佐川急便
 
   <h1>ご請求情報</h1>
   <br> ご請求先：お届け先と同じ

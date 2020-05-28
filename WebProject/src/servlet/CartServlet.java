@@ -27,11 +27,15 @@ public class CartServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/Cart.jsp");
+		dispatcher.forward(request, response);
 
 
 	}
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	//セッションスコープから取得
     	HttpSession session = request.getSession();
+    	//リスト作成
     	ArrayList<Cart> cartList = (ArrayList<Cart>) session.getAttribute("cartList");
 		if (cartList == null) {
 			// nullなら新しく作る
@@ -61,10 +65,10 @@ public class CartServlet extends HttpServlet {
 		}
 
 
-
+        //コンストラクタに入れる
 		Cart c = new Cart(pattern, size, cloth_flg, hook_flg, quantity, price);
 		cartList.add(c);
-
+        //セッションスコープにリストを入れる
 		session.setAttribute("cartList", cartList);
 
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/Cart.jsp");

@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.OrderDesc;
+import model.OrderDescLogic;
 import model.OrderMain;
 import model.OrderMainLogic;
 import model.User;
@@ -39,6 +41,13 @@ public class MyPage extends HttpServlet {
 				request.setAttribute("orderMainList",orderMainList);
 			}
 
+			String id = request.getParameter("orderId");
+			if(id!=null) {
+				OrderDescLogic orderDescLogic = new OrderDescLogic();
+				List<OrderDesc> orderDescList = orderDescLogic.findByOrder_id(Integer.parseInt(id));
+				request.setAttribute("orderDescList", orderDescList);
+			}
+
 
 			//フォワード先
 			String forwardPath = null;
@@ -50,6 +59,8 @@ public class MyPage extends HttpServlet {
 			//フォワード先の設定
 			if(action == null) {
 				forwardPath = "/WEB-INF/jsp/myPage.jsp";
+			} else if(action.equals("detail")) {
+				forwardPath = "/WEB-INF/jsp/myPage_detail.jsp";
 			} else if(action.equals("change")) {
 				forwardPath = "/WEB-INF/jsp/RegistrationChange.jsp";
 			} else if(action.equals("review")) {

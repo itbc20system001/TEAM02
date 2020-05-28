@@ -14,9 +14,9 @@ public class OrderDescLogic {
 //
 //	}
 
-	public List<OrderDesc> findByOrder_id(OrderMain orderMain) {
+	public List<OrderDesc> findByOrder_id(int orderId) {
 		OrderDescDAO dao = new OrderDescDAO();
-		List<OrderDesc> orderDescList = dao.findByOrder_id(orderMain.getOrder_id());
+		List<OrderDesc> orderDescList = dao.findByOrder_id(orderId);
 
 		return orderDescList;
 	}

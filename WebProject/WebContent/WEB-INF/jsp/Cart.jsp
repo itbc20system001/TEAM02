@@ -36,7 +36,7 @@
 </table>
 <%-- acctionタグつける --%>
 <a href = "/rideau/CartCancel">カートの商品を削除</a><br>
-<a href = "/rideau/Creditcard.jsp">お支払いへ（クレジットカード情報入力）</a>
+<a href = "/rideau/Creditcard">お支払いへ（クレジットカード情報入力）</a>
 
 </body>
 </html>

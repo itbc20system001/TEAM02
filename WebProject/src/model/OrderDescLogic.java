@@ -7,12 +7,12 @@ import dao.OrderDescDAO;
 
 public class OrderDescLogic {
 
-//	public OrderDesc insert(OrderDesc orderDesc) {
-//
-//		OrderDesc dao = new OrderDesc();
-//		return dao.create(orderDesc);
-//
-//	}
+	public OrderDesc insert(OrderDesc orderDesc) {
+
+		OrderDescDAO dao = new OrderDescDAO();
+		return dao.create(orderDesc);
+
+	}
 
 	public List<OrderDesc> findByOrder_id(int orderId) {
 		OrderDescDAO dao = new OrderDescDAO();

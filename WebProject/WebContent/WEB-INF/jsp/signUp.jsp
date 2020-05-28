@@ -15,6 +15,7 @@ Emailアドレス:<input type = "text" name = "email"><br>
 住所:<input type = "text" name = "address"><br>
  <% if(errorMsg !=null){ %><%= errorMsg %><br><% } %>
 <input type = "submit" value = "登録">
+<a href = "/rideau/Login">戻る</a>
 </form>
 
 </body>

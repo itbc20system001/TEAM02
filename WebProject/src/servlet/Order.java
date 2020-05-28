@@ -38,13 +38,15 @@ public class Order extends HttpServlet {
 		//Httpセッションインスタンスの取得
 		HttpSession session = request.getSession();
 
-
+		//合計金額表示用
 		int totalPrice = 0;
 		ArrayList<Cart> cartList = (ArrayList<Cart>) session.getAttribute("cartList");
 		for (Cart cart : cartList) {
 			totalPrice+=cart.getPrice();
 		}
 		session.setAttribute("totalPrice", totalPrice);
+
+
 
 
 

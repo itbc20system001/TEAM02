@@ -7,16 +7,16 @@ import dao.OrderDescDAO;
 
 public class OrderDescLogic {
 
-//	public OrderDesc insert(OrderDesc orderDesc) {
-//
-//		OrderDesc dao = new OrderDesc();
-//		return dao.create(orderDesc);
-//
-//	}
+	public OrderDesc insert(OrderDesc orderDesc) {
 
-	public List<OrderDesc> findByOrder_id(OrderMain orderMain) {
 		OrderDescDAO dao = new OrderDescDAO();
-		List<OrderDesc> orderDescList = dao.findByOrder_id(orderMain.getOrder_id());
+		return dao.create(orderDesc);
+
+	}
+
+	public List<OrderDesc> findByOrder_id(int orderId) {
+		OrderDescDAO dao = new OrderDescDAO();
+		List<OrderDesc> orderDescList = dao.findByOrder_id(orderId);
 
 		return orderDescList;
 	}

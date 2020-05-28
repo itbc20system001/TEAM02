@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -30,7 +31,12 @@ public class CartServlet extends HttpServlet {
 
 	}
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+    	HttpSession session = request.getSession();
+    	ArrayList<Cart> cartList = (ArrayList<Cart>) session.getAttribute("cartList");
+		if (cartList == null) {
+			// nullなら新しく作る
+			cartList = new ArrayList<>();
+		}
     	int hook = Integer.parseInt(request.getParameter("hook"));
 		int cloth = Integer.parseInt(request.getParameter("cloth"));
 		int size = Integer.parseInt(request.getParameter("size"));
@@ -57,8 +63,9 @@ public class CartServlet extends HttpServlet {
 
 
 		Cart c = new Cart(pattern, size, cloth_flg, hook_flg, quantity, price);
-		HttpSession session = request.getSession();
-		session.setAttribute("Cart", c);
+		cartList.add(c);
+
+		session.setAttribute("cartList", cartList);
 
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/Cart.jsp");
 				dispatcher.forward(request, response);

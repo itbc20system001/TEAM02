@@ -1,7 +1,10 @@
+<%@page import="model.Cart"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="model.CreditCard"%>
 <%
 	CreditCard c = (CreditCard) request.getAttribute("creditCard");
+	ArrayList<Cart> cartList = (ArrayList<Cart>) session.getAttribute("cartList");
 %>
 
 <!DOCTYPE html>
@@ -17,7 +20,45 @@
   <br>
   <br>
   <h1>商品詳細</h1>
-  <br> ~~~~ ~~~~
+  <br>
+  <%
+  	for (Cart cart : cartList) {
+  %>
+  <table>
+    <tbody>
+      <tr>
+        <th>柄</th>
+        <td><%=cart.getPattern_cd()%></td>
+      </tr>
+      <tr>
+        <th>サイズ縦</th>
+        <td><%=cart.getSize_price_cd()%></td>
+      </tr>
+      <tr>
+        <th>サイズ横</th>
+        <td><%=cart.getSize_price_cd()%></td>
+      </tr>
+      <tr>
+        <th>フックの有無</th>
+        <td><%=cart.isHook_flg()%></td>
+      </tr>
+      <tr>
+        <th>裏地の有無</th>
+        <td><%=cart.isLiner_flag()%></td>
+      </tr>
+      <tr>
+        <th>数量</th>
+        <td><%=cart.getQuantity()%></td>
+      </tr>
+      <tr>
+        <th>価格</th>
+        <td><%=cart.getPrice()%></td>
+      </tr>
+    </tbody>
+  </table>
+  <%
+  	}
+  %>
   <p>合計金額：～</p>
 
   <h1>お届け情報</h1>
@@ -33,8 +74,7 @@
 
 
   <form action="/rideau/OrderConfirmation" method="post">
-    <input type hidden>
-    <input type="submit" value="注文確定">
+    <input type hidden> <input type="submit" value="注文確定">
   </form>
 
   <a href="/WEB-INF/jsp/Creditcard.jsp">クレジットカード情報入力に戻る"></a>

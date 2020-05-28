@@ -1,6 +1,9 @@
+<%@page import="model.Pattern"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
 	String color = (String) request.getAttribute("color");
+List<Pattern> patternList=(List<Pattern>) request.getAttribute("patternList");
 %>
 <!DOCTYPE html>
 <html>
@@ -55,28 +58,25 @@ section {
 <body>
   <p><%=color%>のデザイン一覧
   </p>
-<section id="100110">要素１</section>
-
-    <section id="100135">要素2</section>
-
-    <section id="100140">要素3</section>
+<
   <form name="form1" action="/rideau/Cart" method="get">
     <div class="selection-group">
-      <input id="a" type="radio" name="rate" value="a"> <label for="a"> <img src="//placehold.it/90x90">
-      </label> <input id="b" type="radio" name="rate" value="b"> <label for="b"> <img src="//placehold.it/90x90">
-      </label> <input id="c" type="radio" name="rate" value="c"> <label for="c"> <img src="//placehold.it/90x90">
+   <% for(Pattern p:patternList){ %>
+      <input id="<%=p.getPattern_cd() %>" type="radio" name="rate" value="<%=p.getPattern_cd() %>"> <label for="<%= p.getPattern_cd()%>"> <img src=<%= p.getPattern_img() %>>
+
       </label>
+      <%} %>
     </div>
 
-    サイズを選んでください<br> <select id="Select1" onchange="selectboxChange();">
+    サイズを選んでください<br> <select name="size" id="Select1" onchange="selectboxChange();">
       <option value="select">選択してください</option>
-      <option value="100110">100×110</option>
-      <option value="100135">100×135</option>
-      <option value="100140">100×140</option>
-      <option value="100178">100×178</option>
-      <option value="100200">100×200</option>
-      <option value="150178">150×178</option>
-      <option value="150200">150×200</option>
+      <option value="1">100×110</option>
+      <option value="2">100×135</option>
+      <option value="3">100×140</option>
+      <option value="4">100×178</option>
+      <option value="5">100×200</option>
+      <option value="6">150×178</option>
+      <option value="7">150×200</option>
     </select><br> オプション<br>
     <table>
       <tr>
@@ -90,7 +90,8 @@ section {
     </table>
     <p>金額</p>
 <div id="output"></div>
-
+<br>数量<br>
+<input type="number" name="quantity">
     <input type="submit" value="カートに入れる"> <input type="submit" value="購入画面へ進む">
   </form>
 

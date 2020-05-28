@@ -1,8 +1,10 @@
+<%@page import="model.User"%>
 <%@page import="model.Cart"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="model.CreditCard"%>
 <%
+    User loginUsr = (User) session.getAttribute("user");
 	CreditCard c = (CreditCard) request.getAttribute("creditCard");
     int totalPrice = (Integer) session.getAttribute("totalPrice");
 	ArrayList<Cart> cartList = (ArrayList<Cart>) session.getAttribute("cartList");
@@ -64,10 +66,10 @@
 
   <h1>お届け情報</h1>
   <br>
-  <p>お届け先</p>
-  <br> ~~~~~~~~ ~~~~~~~~
+  <p>お届け先住所</p>
+  <br><%=loginUsr.getAddress() %>
   <p>配送方法</p>
-  <br> 佐川急便
+  <br>佐川急便
 
   <h1>ご請求情報</h1>
   <br> ご請求先：お届け先と同じ
@@ -78,10 +80,10 @@
     <input type hidden> <input type="submit" value="注文確定">
   </form>
 
-  <a href="/WEB-INF/jsp/Creditcard.jsp">クレジットカード情報入力に戻る"></a>
+  <a href="/rideau/Creditcard>クレジットカード情報入力に戻る"></a>
   <br>
 
-  <a href="/WEB-INF/jsp/Cart.jsp">カートへ戻る</a>
+  <a href="/rideau/Cart">カートへ戻る</a>
   <br>
 </body>
 </html>

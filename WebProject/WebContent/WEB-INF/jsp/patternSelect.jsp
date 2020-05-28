@@ -58,7 +58,6 @@ section {
 <body>
   <p><%=color%>のデザイン一覧
   </p>
-<
   <form name="form1" action="/rideau/Cart" method="post">
     <div class="selection-group">
    <% for(Pattern p:patternList){ %>

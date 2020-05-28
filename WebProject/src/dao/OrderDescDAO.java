@@ -72,7 +72,7 @@ public class OrderDescDAO implements DBConfig{
 
 
 
-    public List<OrderDesc> selectByOrder_id(Integer id ) {
+    public List<OrderDesc> findByOrder_id(int id ) {
         Connection conn = null;
         List<OrderDesc> orderDescList= new ArrayList<OrderDesc>();
 
@@ -84,7 +84,7 @@ public class OrderDescDAO implements DBConfig{
 
             PreparedStatement pStmt=conn.prepareStatement(sql);
 
-			pStmt.setInt(1,id);
+			pStmt.setInt(1, id);
 
             //実行
             ResultSet rs=pStmt.executeQuery();

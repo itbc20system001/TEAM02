@@ -3,9 +3,9 @@
 <%@ page import="model.OrderMain"%>
 <%@ page import="model.OrderDesc"%>
 <%@ page import="java.util.List"%>
-<%@ page import="model.User"%>
+<%@ page import="dao.OrderDescDAO" %>
 <%
-User loginUsr = (User) session.getAttribute("loginUsr");
+User loginUsr = (User) session.getAttribute("user");
 List<OrderMain> orderMainList=(List<OrderMain>)request.getAttribute("orderMainList");
 List<OrderDesc> orderDescList=(List<OrderDesc>)request.getAttribute("orderDescList");
 String errorMsg = (String)request.getAttribute("errorMsg");
@@ -27,19 +27,19 @@ String errorMsg = (String)request.getAttribute("errorMsg");
   <table>
     <tr>
       <th>ユーザーID：</th>
-      <td></td>
+      <td><%=loginUsr.getUser_id() %></td>
     </tr>
     <tr>
       <th>Email:</th>
-      <td>${USER.email}</td>
+      <td><%=loginUsr.getEmail() %></td>
     </tr>
     <tr>
       <th>氏名：</th>
-      <td>${USER.user_nm }</td>
+      <td><%=loginUsr.getUser_nm() %></td>
     </tr>
     <tr>
       <th>住所：</th>
-      <td>${USER.user_address }</td>
+      <td><%=loginUsr.getAddress() %></td>
     </tr>
   </table>
   <a href="/rideau/MyPage?action=change">登録情報変更</a>
@@ -55,15 +55,15 @@ String errorMsg = (String)request.getAttribute("errorMsg");
   <table class="items">
     <tr>
       <th>注文日：</th>
-      <td>${ORDER_MAIN.order_date }</td>
+      <td><%=orderMain.getOrder_date() %> </td>
     </tr>
     <tr>
       <th>注文のID：</th>
-      <td>${ORDER_MAIN.order_id }</td>
+      <td><%=orderMain.getOrder_id() %></td>
     </tr>
     <tr>
       <th>合計金額：</th>
-      <td>${ORDER_MAIN.total }</td>
+      <td><%=orderMain.getTotal() %></td>
     </tr>
     <% } %>
     <% } %>
@@ -76,32 +76,32 @@ String errorMsg = (String)request.getAttribute("errorMsg");
   <table>
     <tr>
       <th>柄：</th>
-      <td>${ORDER_DESC.pattern_cd }</td>
+      <td><%=orderDesc.getPattern_cd() %></td>
     </tr>
 
     <tr>
       <th>サイズ：</th>
-      <td>${ORDER_DESC.size_price_cd }</td>
+      <td><%=orderDesc.getSize_price_cd() %></td>
     </tr>
 
     <tr>
       <th>裏地：</th>
-      <td>${ORDER_DESC.liner_flag }</td>
+      <td><%=orderDesc.isLiner_flg() %></td>
     </tr>
 
     <tr>
       <th>ホック：</th>
-      <td>${ORDER_DESC.hook_flag }</td>
+      <td><%=orderDesc.isHook_flg() %></td>
     </tr>
 
     <tr>
       <th>個数：</th>
-      <td>${ORDER_DESC.quantity }</td>
+      <td><%=orderDesc.getQuantity() %></td>
     </tr>
 
     <tr>
       <th>価格：</th>
-      <td>${ORDER_DESC.price }</td>
+      <td><%=orderDesc.getPrice() %></td>
     </tr>
   </table>
   <% } %>

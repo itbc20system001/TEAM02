@@ -59,10 +59,10 @@ section {
   <p><%=color%>のデザイン一覧
   </p>
 <
-  <form name="form1" action="/rideau/Cart" method="get">
+  <form name="form1" action="/rideau/Cart" method="post">
     <div class="selection-group">
    <% for(Pattern p:patternList){ %>
-      <input id="<%=p.getPattern_cd() %>" type="radio" name="rate" value="<%=p.getPattern_cd() %>"> <label for="<%= p.getPattern_cd()%>"> <img src=<%= p.getPattern_img() %>>
+      <input id="<%=p.getPattern_cd() %>" type="radio" name="pattern" value="<%=p.getPattern_cd() %>"> <label for="<%= p.getPattern_cd()%>"> <img src=<%= p.getPattern_img() %>>
 
       </label>
       <%} %>

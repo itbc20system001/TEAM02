@@ -1,5 +1,8 @@
+<%@page import="model.Cart"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%
+    Cart c = (Cart) session.getAttribute("Cart");%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,19 +15,22 @@
 <table border = "1" style = "width : ">
 <tbody>
 <tr bgcolor="silver">
-<th>商品ID</th>
 <th>柄</th>
 <th>サイズ縦</th>
 <th>サイズ横</th>
-<th>オプション</th>
+<th>フックの有無</th>
+<th>裏地の有無</th>
 <th>数量</th>
 <th>価格</th>
 </tr>
 <tr>
-<td>1234</td>
-<td>abc</td>
-<td>1</td>
-<td>price</td>
+<td><%=c.getPattern_cd() %></td>
+<td><%=c.getSize_price_cd() %></td>
+<td><%=c.getSize_price_cd() %></td>
+<td><%=c.isHook_flg() %></td>
+<td><%=c.isLiner_flag() %></td>
+<td><%=c.getQuantity() %></td>
+<td><%=c.getPrice() %></td>
 </tr>
 </tbody>
 </table>

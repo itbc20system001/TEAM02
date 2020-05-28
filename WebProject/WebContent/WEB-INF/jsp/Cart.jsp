@@ -3,7 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%
-    List<Cart> cartList=(List<Cart>) request.getAttribute("cartList");%>
+    List<Cart> cartList= (List<Cart>) session.getAttribute("cartList");%>
 <!DOCTYPE html>
 <html>
 <head>

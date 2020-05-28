@@ -35,7 +35,7 @@ public class CartServlet extends HttpServlet {
     	ArrayList<Cart> cartList = (ArrayList<Cart>) session.getAttribute("cartList");
 		if (cartList == null) {
 			// nullなら新しく作る
-			cartList = new ArrayList<>();
+			cartList = new ArrayList<Cart>();
 		}
     	int hook = Integer.parseInt(request.getParameter("hook"));
 		int cloth = Integer.parseInt(request.getParameter("cloth"));

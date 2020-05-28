@@ -68,7 +68,7 @@ public class Order_mainDAO implements DBConfig {
 
 	}
 
-	public List<OrderMain> findByUserId(User loginUser) {
+	public List<OrderMain> findByUserId(User user) {
 		Connection conn = null;
 		List<OrderMain> orderMainList = new ArrayList<OrderMain>();
 
@@ -81,7 +81,7 @@ public class Order_mainDAO implements DBConfig {
 			String sql = "SELECT * FROM order_main WHERE user_id=? ORDER BY order_date DESC;";
 
 			PreparedStatement pStmt = conn.prepareStatement(sql);
-			pStmt.setInt(1, loginUser.getUser_id());
+			pStmt.setInt(1, user.getUser_id());
 
 			//SELECTを実行し、結果表（ResultSet）を取得
 			ResultSet rs = pStmt.executeQuery();

@@ -13,9 +13,9 @@ public class OrderMainLogic {
 
 	}
 
-	public List<OrderMain> findAllByUserId(User loginUsr) {
+	public List<OrderMain> findByUserId(User user) {
 		Order_mainDAO dao = new Order_mainDAO();
-		List<OrderMain> orderMainList = dao.findByUserId(loginUsr);
+		List<OrderMain> orderMainList = dao.findByUserId(user);
 
 		return orderMainList;
 	}

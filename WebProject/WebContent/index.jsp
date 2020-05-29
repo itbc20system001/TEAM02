@@ -21,8 +21,8 @@
       <ul>
         <li><a href="">ホーム</a></li>
         <li><a href="/rideau/Shop">商品検索</a></li>
-        <li><a href="">カート</a></li>
-        <li><a href="">ログイン</a></li>
+        <li><a href="/rideau/Cart">カート</a></li>
+        <li><a href="/rideau/Login">ログイン</a></li>
       </ul>
     </nav>
   </header>

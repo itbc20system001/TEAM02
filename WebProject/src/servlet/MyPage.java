@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -15,7 +16,9 @@ import model.OrderDesc;
 import model.OrderDescLogic;
 import model.OrderMain;
 import model.OrderMainLogic;
+import model.SizePrice;
 import model.User;
+import model.getSizePriceLogic;
 
 @WebServlet("/MyPage")
 public class MyPage extends HttpServlet {
@@ -45,8 +48,20 @@ public class MyPage extends HttpServlet {
 			if(id!=null) {
 				OrderDescLogic orderDescLogic = new OrderDescLogic();
 				List<OrderDesc> orderDescList = orderDescLogic.findByOrder_id(Integer.parseInt(id));
+
+				getSizePriceLogic getSPL = new getSizePriceLogic();
+				List<SizePrice> sizePriceList = new ArrayList<SizePrice>();
+
+				for(OrderDesc orderDesc:orderDescList){
+					SizePrice sp = new SizePrice();
+					sp = getSPL.execute(orderDesc.getSize_price_cd());
+					sizePriceList.add(sp);
+
+				}
+				request.setAttribute("sizePriceList", sizePriceList);
 				request.setAttribute("orderDescList", orderDescList);
 			}
+
 
 
 			//フォワード先
@@ -68,7 +83,7 @@ public class MyPage extends HttpServlet {
 			}
 
 			//request.setAttribute()でデータベースの情報を取得するロジックを作成
-//			int uId = u.getUser_id();
+			//			int uId = u.getUser_id();
 			// Order_mainDAO からユーザーidで検索をする
 			//request.setAttribute()にセットする
 

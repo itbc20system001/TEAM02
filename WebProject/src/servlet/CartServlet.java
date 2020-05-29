@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.Cart;
+import model.SizePrice;
+import model.getSizePriceLogic;
 
 
 @WebServlet("/Cart")
@@ -46,9 +48,12 @@ public class CartServlet extends HttpServlet {
 		int size = Integer.parseInt(request.getParameter("size"));
 		int quantity = Integer.parseInt(request.getParameter("quantity"));
 		int  pattern = Integer.parseInt(request.getParameter("pattern"));
-		int price = 1000;
 
-		System.out.println(quantity);
+		getSizePriceLogic sizePriceLogic = new getSizePriceLogic();
+		SizePrice sp = sizePriceLogic.execute(size);
+		int price = sp.getPrice();
+
+		//System.out.println(quantity);
 
 		boolean hook_flg;
 		if(hook==0){

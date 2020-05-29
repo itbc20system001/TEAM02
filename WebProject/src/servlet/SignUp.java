@@ -36,7 +36,7 @@ public class SignUp extends HttpServlet {
 			errorMsg = "Emailアドレスを正しく入力してください。" ;
 			request.setAttribute("errorMsg",errorMsg);
 		}
-		if(password.length()<=8) {
+		if(password.length()<8) {
 			errorMsg = errorMsg + "パスワードは8文字以上で入力してください。";
 			request.setAttribute("errorMsg",errorMsg);
 		}

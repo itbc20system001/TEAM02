@@ -10,7 +10,7 @@
 </head>
 <body>
 <p>ログイン完了画面です。${user.getUser_nm() }様</p>
-<a href = "/rideau/Login">トップへ</a>
+<a href = "/rideau">トップへ</a>
 <a href = "/rideau/MyPage">マイページへ</a>
 
 

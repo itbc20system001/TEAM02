@@ -32,7 +32,7 @@ public class OrderDescDAO implements DBConfig{
         try {
             conn = DriverManager.getConnection(JDBC_URL,DB_USER,DB_PASS);
 
-            String sql = "INSERT INTO order_desc (order_id,quantity,pattern_cd,size_price_cd,price,liner_flg,hook_flg) VALUES (?,?,?,?,?,?,?,?);";
+            String sql = "INSERT INTO order_desc (order_id,quantity,pattern_cd,size_price_cd,price,liner_flg,hook_flg) VALUES (?,?,?,?,?,?,?);";
 
 
             PreparedStatement pStmt=conn.prepareStatement(sql);

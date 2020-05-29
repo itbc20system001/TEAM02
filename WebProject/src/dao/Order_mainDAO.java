@@ -5,9 +5,11 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.OrderId;
 import model.OrderMain;
 import model.User;
 
@@ -29,30 +31,45 @@ public class Order_mainDAO implements DBConfig {
 			"2020-05-25"
 			));*/
 
-	public OrderMain create(OrderMain orderMain) {
+	public OrderId  create(User user,int total,OrderId id) {
 		Connection conn = null;
+		Integer order_id =null;
 
 
 		//データベースに接続
 		try {
 			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
 
+			OrderMain orderMain = new OrderMain();
+
 			//INSERT文を準備
 			String sql = "INSERT INTO order_main(user_id,total,order_date) VALUES (?,?,CURRENT_DATE);";
 
-			PreparedStatement pStmt = conn.prepareStatement(sql);
+			PreparedStatement pStmt=conn.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
 
-			pStmt.setInt(1, orderMain.getUser_id());
-			pStmt.setInt(2, orderMain.getTotal());
+
+			pStmt.setInt(1, user.getUser_id());
+			pStmt.setInt(2, total);
 			/*pStmt.setString(3, orderMain.getOrder_date());*/
 
 			//実行
 			System.out.println(pStmt.executeUpdate());
-			pStmt.close(); // Close Statement
-			return orderMain;
+
+			ResultSet rs=pStmt.getGeneratedKeys();
+
+            while (rs.next()) {
+                  java.math.BigDecimal idColVar = rs.getBigDecimal(1);
+                  order_id =idColVar.intValue();
+            }
+
+            rs.close();
+            pStmt.close(); // Close Statement
+            id.setOrder_id(order_id);
+
+			return id;
 		} catch (SQLException e) {
 			e.printStackTrace();
-			return orderMain;
+			return id;
 		} finally {
 			if (conn != null) {
 				try {
@@ -60,7 +77,7 @@ public class Order_mainDAO implements DBConfig {
 
 				} catch (SQLException e) {
 					e.printStackTrace();
-					return orderMain;
+					return id;
 				}
 			}
 

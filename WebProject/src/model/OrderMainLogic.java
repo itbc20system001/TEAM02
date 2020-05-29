@@ -6,10 +6,11 @@ import dao.Order_mainDAO;
 
 public class OrderMainLogic {
 
-	public OrderMain insert(OrderMain orderMain) {
+	public OrderId insert(User user, int total) {
 
 		Order_mainDAO dao = new Order_mainDAO();
-		return dao.create(orderMain);
+		OrderId orderId = new OrderId();
+		return dao.create(user,total,orderId);
 
 	}
 

@@ -13,8 +13,8 @@ import javax.servlet.http.HttpSession;
 import model.User;
 
 
-@WebServlet("/Creditcard")
-public class Creditcard extends HttpServlet {
+@WebServlet("/ContactServlet")
+public class ContactServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 
@@ -23,19 +23,19 @@ public class Creditcard extends HttpServlet {
 		User loginUsr = (User) session.getAttribute("user");
 
 		if (loginUsr!=null) {
-			RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/Creditcard.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/contactLogin.jsp");
 			dis.forward(request, response);
 		} else  {
-			RequestDispatcher dis = request.getRequestDispatcher("rideau/Login");
+			RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/contact.jsp");
 			dis.forward(request, response);
 
+		}
+
 	}
+
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-
-		doGet(request, response);
 	}
-
 }

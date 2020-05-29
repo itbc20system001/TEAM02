@@ -71,9 +71,7 @@ String errorMsg = (String)request.getAttribute("errorMsg");
     <% } %>
   </table>
 
-  <p>
-    <a href="/rideau/MyPage?action=review">商品のレビュー</a>
-  </p>
+
 </body>
 </html>
 

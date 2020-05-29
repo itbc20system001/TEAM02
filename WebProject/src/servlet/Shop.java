@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.GetPatternListLogic;
 import model.Pattern;
+import model.SizePrice;
+import model.getSizePriceLogic;
 
 @WebServlet("/Shop")
 public class Shop extends HttpServlet {
@@ -27,11 +29,22 @@ public class Shop extends HttpServlet {
 		if (color == null) {
 			fowardPath = "/WEB-INF/jsp/colorSelect.jsp";
 		} else {
-			GetPatternListLogic logic=new GetPatternListLogic();
-			List<Pattern> patternList=new ArrayList<Pattern>();
-			patternList=logic.execute(color);
+			//　画像出力の準備
+			GetPatternListLogic patternLogic = new GetPatternListLogic();
+			List<Pattern> patternList = new ArrayList<Pattern>();
+			patternList = patternLogic.execute(color);
+
+			//　金額を出せるようにする
+			getSizePriceLogic sizePriceLogic = new getSizePriceLogic();
+			List<SizePrice> sizePriceList = new ArrayList<SizePrice>();
+			for (int i = 1; i <= 7; i++) {
+				SizePrice sp = sizePriceLogic.execute(i);
+				sizePriceList.add(sp);
+			}
+
 
 			request.setAttribute("patternList", patternList);
+			request.setAttribute("sizePriceList", sizePriceList);
 
 			request.setAttribute("color", color);
 			fowardPath = "/WEB-INF/jsp/patternSelect.jsp";

@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="model.OrderMain"%>
 <%@ page import="model.OrderDesc"%>
 <%@ page import="java.util.List"%>
@@ -12,7 +11,7 @@ String errorMsg = (String)request.getAttribute("errorMsg");
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>注文詳細</title>
 </head>
 <body>
   <h2>注文履歴</h2>
@@ -20,8 +19,10 @@ String errorMsg = (String)request.getAttribute("errorMsg");
   <% if( orderDescList == null) { %>
 
   <% } else if(orderDescList !=null){ %>
-  <h3>詳細</h3>
+
   <% for(OrderDesc orderDesc : orderDescList) {%>
+  <h3>
+    詳細<%=orderDesc.getOrder_desc_id() %></h3>
   <table>
     <tr>
       <th>柄：</th>
@@ -35,12 +36,12 @@ String errorMsg = (String)request.getAttribute("errorMsg");
 
     <tr>
       <th>裏地：</th>
-      <td><%=orderDesc.isLiner_flg() %></td>
+      <td><% if(orderDesc.isLiner_flg()){ %>有り<%} else { %>無し<%} %></td>
     </tr>
 
     <tr>
-      <th>ホック：</th>
-      <td><%=orderDesc.isHook_flg() %></td>
+      <th>タイプ：</th>
+      <td><% if(orderDesc.isHook_flg()){ %>有り<%} else { %>無し<%} %></td>
     </tr>
 
     <tr>
@@ -58,7 +59,7 @@ String errorMsg = (String)request.getAttribute("errorMsg");
 
 
   <p>
-    <a href="/rideau/MyPage?action=review">商品のレビュー</a>
+    <a href="/rideau/MyPage">マイページへ戻る</a>
   </p>
 </body>
 </html>

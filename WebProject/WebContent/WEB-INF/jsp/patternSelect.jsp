@@ -1,9 +1,11 @@
+<%@page import="model.SizePrice"%>
 <%@page import="model.Pattern"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
-	String color = (String) request.getAttribute("color");
-List<Pattern> patternList=(List<Pattern>) request.getAttribute("patternList");
+    String color = (String) request.getAttribute("color");
+    List<Pattern> patternList=(List<Pattern>) request.getAttribute("patternList");
+    List<SizePrice> sizePriceList=(List<SizePrice>) request.getAttribute("sizePriceList");
 %>
 <!DOCTYPE html>
 <html>
@@ -35,22 +37,16 @@ section {
      target = document.getElementById("output");
 
      selindex = document.form1.Select1.selectedIndex;
-     switch (selindex) {
-       case 1:
-         target.innerHTML = "要素1が選択されています。<br/>";
+     switch (selindex)
+     case 1:
+    	 target.innerHTML = "------<br>";
+     {
+     <% for(int i=0;i<sizePriceList.size()+1;i++){%>
+     case <%=i+2%>:
+         target.innerHTML = "<%= sizePriceList.get(i).getPrice()%>円<br>";
          break;
-       case 2:
-         target.innerHTML = "要素2が選択されています。<br/>";
-         break;
-       case 3:
-         target.innerHTML = "要素3が選択されています。<br/>";
-         break;
-       case 4:
-         target.innerHTML = "要素4が選択されています。<br/>";
-         break;
-       case 5:
-         target.innerHTML = "要素5が選択されています。<br/>";
-         break;
+     <% } %>
+
      }
    }
 </script>

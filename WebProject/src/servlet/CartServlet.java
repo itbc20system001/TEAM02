@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import model.Cart;
 import model.SizePrice;
+import model.User;
 import model.getSizePriceLogic;
 
 
@@ -28,13 +29,21 @@ public class CartServlet extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		User loginUsr = (User) session.getAttribute("user");
+		if (loginUsr!=null) {
+			RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/Cart.jsp");
+			dis.forward(request, response);
+		} else  {
+			response.sendRedirect("/rideau/Login");
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/Cart.jsp");
-		dispatcher.forward(request, response);
+		}
 
 
 	}
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+
     	//セッションスコープから取得
     	HttpSession session = request.getSession();
     	//リスト作成
@@ -76,9 +85,15 @@ public class CartServlet extends HttpServlet {
         //セッションスコープにリストを入れる
 		session.setAttribute("cartList", cartList);
 
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/Cart.jsp");
-				dispatcher.forward(request, response);
+		User loginUsr = (User) session.getAttribute("user");
 
+		if (loginUsr!=null) {
+			RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/Cart.jsp");
+			dis.forward(request, response);
+		} else  {
+			response.sendRedirect("/rideau/Login");
+
+		}
 
 
 

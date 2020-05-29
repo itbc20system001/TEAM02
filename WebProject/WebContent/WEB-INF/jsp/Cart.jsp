@@ -2,6 +2,8 @@
 <%@page import="model.Cart"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import = "model.User"%>
+    <% User user = (User) session.getAttribute("user"); %>
     <%
     List<Cart> cartList= (List<Cart>) session.getAttribute("cartList");%>
 <!DOCTYPE html>
@@ -12,7 +14,7 @@
 </head>
 <body>
 <h1>カート</h1>
-<p>userNameさんのカート内の商品</p><br>
+<p>${user.getUser_nm() }さんのカート内の商品</p><br>
 
 <form action = "/rideau/CartCancel" method = "post">
 <% int i = 0;
@@ -33,11 +35,11 @@ for(Cart c:cartList){ %>
 </tr>
 <tr>
 <th>フックの有無</th>
-<td><%=c.isHook_flg() %></td>
+<td><% if(c.isHook_flg()){ %>有り<%} else { %>無し<%} %></td>
 </tr>
 <tr>
 <th>裏地の有無</th>
-<td><%=c.isLiner_flag() %></td>
+<td><% if(c.isLiner_flag()){ %>有り<%} else { %>無し<%} %></td>
 </tr>
 <tr>
 <th>数量</th>
@@ -67,7 +69,6 @@ for(Cart c:cartList){ %>
 
 <input type = "submit" value = "カートの商品削除">
 </form>
-<a href = "/rideau/CartCancel">カートの商品を削除</a><br>
 <a href = "/rideau/Creditcard">お支払いへ（クレジットカード情報入力）</a>
 
 </body>

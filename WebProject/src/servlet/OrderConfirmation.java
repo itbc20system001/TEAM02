@@ -54,6 +54,7 @@ public class OrderConfirmation extends HttpServlet {
 			orderDesc = descLogic.insert(orderDesc);
 
 		}
+		session.removeAttribute("cartList");
 
 
 

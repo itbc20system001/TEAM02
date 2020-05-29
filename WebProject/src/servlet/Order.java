@@ -42,7 +42,7 @@ public class Order extends HttpServlet {
 		int totalPrice = 0;
 		ArrayList<Cart> cartList = (ArrayList<Cart>) session.getAttribute("cartList");
 		for (Cart cart : cartList) {
-			totalPrice+=cart.getPrice();
+			totalPrice+=(cart.getPrice()*cart.getQuantity());
 		}
 		session.setAttribute("totalPrice", totalPrice);
 

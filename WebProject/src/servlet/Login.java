@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import model.LoginLogic;
 import model.LoginModel;
+import model.User;
 
 
 @WebServlet("/Login")
@@ -20,8 +21,16 @@ public class Login extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//フォワード
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
-		dispatcher.forward(request, response);
+		HttpSession session=request.getSession();
+		User user = (User) session.getAttribute("user");
+
+		if(user!=null) {
+			response.sendRedirect("/rideau/MyPage");
+		}else {
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
+			dispatcher.forward(request, response);
+
+		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

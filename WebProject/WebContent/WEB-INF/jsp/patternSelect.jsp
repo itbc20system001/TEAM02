@@ -33,7 +33,7 @@ section {
 </style>
   <script type="text/javascript" >
 
- function selectboxChange() {
+ <%-- function selectboxChange() {
      target = document.getElementById("output");
 
      selindex = document.form1.Select1.selectedIndex;
@@ -48,7 +48,7 @@ section {
      <% } %>
 
      }
-   }
+   } --%>
 </script>
 </head>
 <body>

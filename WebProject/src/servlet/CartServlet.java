@@ -58,7 +58,7 @@ public class CartServlet extends HttpServlet {
 		}
 
 		boolean cloth_flg;
-		if(hook==0){
+		if(cloth==0){
 		cloth_flg=true;
 		}else{
 		cloth_flg=false;

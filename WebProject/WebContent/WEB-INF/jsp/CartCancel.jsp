@@ -10,5 +10,6 @@
 <h1>カート内の商品を削除しました</h1>
 <a href = "/rideau">トップへ</a><br>
 <a href = "/rideau/shop.jsp">ショッピングを続ける</a>
+<a href = "/rideau/Cart">カートに戻る</a>
 </body>
 </html>

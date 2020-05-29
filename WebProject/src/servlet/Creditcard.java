@@ -26,8 +26,9 @@ public class Creditcard extends HttpServlet {
 			RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/Creditcard.jsp");
 			dis.forward(request, response);
 		} else  {
-			RequestDispatcher dis = request.getRequestDispatcher("rideau/Login");
-			dis.forward(request, response);
+			response.sendRedirect("/rideau/Login");
+
+		}
 
 	}
 

@@ -2,6 +2,7 @@ package servlet;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,6 +14,8 @@ import javax.servlet.http.HttpSession;
 
 import model.Cart;
 import model.CreditCard;
+import model.SizePrice;
+import model.getSizePriceLogic;
 
 @WebServlet("/Order")
 public class Order extends HttpServlet {
@@ -38,16 +41,28 @@ public class Order extends HttpServlet {
 		//Httpセッションインスタンスの取得
 		HttpSession session = request.getSession();
 
+
+
+
 		//合計金額表示用
 		int totalPrice = 0;
 		ArrayList<Cart> cartList = (ArrayList<Cart>) session.getAttribute("cartList");
+
+		List<SizePrice> sizePriceList = new ArrayList<SizePrice>();
+		getSizePriceLogic getSPL = new getSizePriceLogic();
+
+		for(Cart cart:cartList){
+			SizePrice sp = new SizePrice();
+			sp = getSPL.execute(cart.getSize_price_cd());
+			sizePriceList.add(sp);
+
+		}
+		request.setAttribute("sizePriceList", sizePriceList);
+
 		for (Cart cart : cartList) {
 			totalPrice+=(cart.getPrice()*cart.getQuantity());
 		}
 		session.setAttribute("totalPrice", totalPrice);
-
-
-
 
 
 

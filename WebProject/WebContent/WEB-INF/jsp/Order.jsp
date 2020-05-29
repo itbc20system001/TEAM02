@@ -1,13 +1,16 @@
+<%@page import="java.util.List"%>
+<%@page import="model.SizePrice"%>
 <%@page import="model.User"%>
 <%@page import="model.Cart"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="model.CreditCard"%>
 <%
-    User loginUsr = (User) session.getAttribute("user");
+	User loginUsr = (User) session.getAttribute("user");
 	CreditCard c = (CreditCard) request.getAttribute("creditCard");
-    int totalPrice = (Integer) session.getAttribute("totalPrice");
+	int totalPrice = (Integer) session.getAttribute("totalPrice");
 	ArrayList<Cart> cartList = (ArrayList<Cart>) session.getAttribute("cartList");
+	List<SizePrice> sizePriceList = (List<SizePrice>) request.getAttribute("sizePriceList");
 %>
 
 <!DOCTYPE html>
@@ -25,6 +28,7 @@
   <h1>商品詳細</h1>
   <br>
   <%
+  	int i = 0;
   	for (Cart cart : cartList) {
   %>
   <table>
@@ -34,20 +38,36 @@
         <td><%=cart.getPattern_cd()%></td>
       </tr>
       <tr>
-        <th>サイズ縦</th>
-        <td><%=cart.getSize_price_cd()%></td>
+        <th>丈:</th>
+        <td><%=sizePriceList.get(i).getHeight()%></td>
       </tr>
       <tr>
-        <th>サイズ横</th>
-        <td><%=cart.getSize_price_cd()%></td>
+        <th>幅:</th>
+        <td><%=sizePriceList.get(i).getWidth()%></td>
       </tr>
       <tr>
         <th>フックの有無</th>
-        <td><%=cart.isHook_flg()%></td>
+        <td>
+          <%
+          	if (cart.isHook_flg()) {
+          %>有り<%
+          	} else {
+          %>無し<%
+          	}
+          %>
+        </td>
       </tr>
       <tr>
         <th>裏地の有無</th>
-        <td><%=cart.isLiner_flag()%></td>
+        <td>
+          <%
+          	if (cart.isLiner_flag()) {
+          %>有り<%
+          	} else {
+          %>無し<%
+          	}
+          %>
+        </td>
       </tr>
       <tr>
         <th>数量</th>
@@ -55,19 +75,22 @@
       </tr>
       <tr>
         <th>価格</th>
-        <td><%=cart.getPrice()%></td>
+        <td><%=cart.getPrice() * cart.getQuantity()%></td>
       </tr>
     </tbody>
   </table>
   <%
+  	i++;
   	}
   %>
-  <p>合計金額：<%=totalPrice%>円</p>
+  <p>
+    合計金額：<%=totalPrice%>円
+  </p>
 
   <h1>お届け情報</h1>
   <br>
   <p>お届け先住所</p>
-  <br><%=loginUsr.getAddress() %>
+  <br><%=loginUsr.getAddress()%>
   <p>配送方法</p>
   <br>佐川急便
 

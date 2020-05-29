@@ -36,7 +36,7 @@ String errorMsg = (String)request.getAttribute("errorMsg");
 
     <tr>
       <th>サイズ：</th>
-      <td>高さ:<%=sizePriceList.get(i).getHeight() %><br>幅:<%=sizePriceList.get(i).getWidth() %></td>
+      <td>丈:<%=sizePriceList.get(i).getHeight() %><br>幅:<%=sizePriceList.get(i).getWidth() %></td>
     </tr>
 
     <tr>

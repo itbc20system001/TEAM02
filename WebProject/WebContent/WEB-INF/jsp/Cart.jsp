@@ -14,7 +14,9 @@
 <h1>カート</h1>
 <p>userNameさんのカート内の商品</p><br>
 
-<% for(Cart c:cartList){ %>
+<form action = "/rideau/CartCancel" method = "post">
+<% int i = 0;
+for(Cart c:cartList){ %>
 <table>
 <tbody>
 <tr>
@@ -45,13 +47,22 @@
 <th>価格</th>
 <td><%=c.getPrice() %></td>
 </tr>
+<tr>
+<th>削除</th>
+<td><input type ="checkbox" name="cancel" value="<%= i %>"></td>
+</tr>
+
 </tbody>
 </table>
-<%} %>
+<%i++;
+} %>
 <%--<table border = "1" style = "width : ">
 
 </table>--%>
 <%-- acctionタグつける --%>
+
+<input type = "submit" value = "カートの商品削除">
+</form>
 <a href = "/rideau/CartCancel">カートの商品を削除</a><br>
 <a href = "/rideau/Creditcard">お支払いへ（クレジットカード情報入力）</a>
 

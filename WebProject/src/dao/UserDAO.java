@@ -100,4 +100,135 @@ public class UserDAO {
 	}
 
 
+	public boolean changeEmail(int user_id,String email) {
+		//データベースへ接続
+		try {
+			Class.forName("org.mariadb.jdbc.Driver");
+		} catch (ClassNotFoundException e1) {
+			e1.printStackTrace();
+		}
+
+		try(Connection conn = DriverManager.getConnection(
+				JDBC_URL,DB_USER,DB_PASS)) {
+			//UPDATE文の準備
+			String sql = "update user set email = ? where user_id = ?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			pStmt.setString(1, email);
+			pStmt.setInt(2, user_id);
+
+			//UPDATEを実行
+			int result = pStmt.executeUpdate();
+			if(result != 1) {
+				return false;
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+
+
+	}
+
+	public boolean changePass(int user_id,String password) {
+		//データベースへ接続
+		try {
+			Class.forName("org.mariadb.jdbc.Driver");
+		} catch (ClassNotFoundException e1) {
+			e1.printStackTrace();
+		}
+
+		try(Connection conn = DriverManager.getConnection(
+				JDBC_URL,DB_USER,DB_PASS)) {
+			//UPDATE文の準備
+			String sql = "update user set password = ? where user_id = ?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			pStmt.setString(1, password);
+			pStmt.setInt(2, user_id);
+
+			//UPDATEを実行
+			int result = pStmt.executeUpdate();
+			if(result != 1) {
+				return false;
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+
+
+	}
+
+
+	public boolean changeName(int user_id,String user_nm) {
+		//データベースへ接続
+		try {
+			Class.forName("org.mariadb.jdbc.Driver");
+		} catch (ClassNotFoundException e1) {
+			e1.printStackTrace();
+		}
+
+		try(Connection conn = DriverManager.getConnection(
+				JDBC_URL,DB_USER,DB_PASS)) {
+			//UPDATE文の準備
+			String sql = "update user set user_nm = ? where user_id = ?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			pStmt.setString(1, user_nm);
+			pStmt.setInt(2, user_id);
+
+			//UPDATEを実行
+			int result = pStmt.executeUpdate();
+			if(result != 1) {
+				return false;
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+
+
+	}
+
+	public boolean changeAddress(int user_id,String address) {
+		//データベースへ接続
+		try {
+			Class.forName("org.mariadb.jdbc.Driver");
+		} catch (ClassNotFoundException e1) {
+			e1.printStackTrace();
+		}
+
+		try(Connection conn = DriverManager.getConnection(
+				JDBC_URL,DB_USER,DB_PASS)) {
+			//UPDATE文の準備
+			String sql = "update user set address = ? where user_id = ?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			pStmt.setString(1, address);
+			pStmt.setInt(2, user_id);
+
+			//UPDATEを実行
+			int result = pStmt.executeUpdate();
+			if(result != 1) {
+				return false;
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+
+
+	}
+
+
+
 }

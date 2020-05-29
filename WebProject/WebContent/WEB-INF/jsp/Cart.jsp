@@ -44,8 +44,12 @@ for(Cart c:cartList){ %>
 <td><%=c.getQuantity() %></td>
 </tr>
 <tr>
-<th>価格</th>
+<th>単価</th>
 <td><%=c.getPrice() %></td>
+</tr>
+<tr>
+<th>合計金額</th>
+<td><%=c.getPrice()*c.getQuantity() %></td>
 </tr>
 <tr>
 <th>削除</th>

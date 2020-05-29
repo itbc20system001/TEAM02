@@ -1,10 +1,13 @@
+<%@page import="model.SizePrice"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="model.OrderMain"%>
 <%@ page import="model.OrderDesc"%>
 <%@ page import="java.util.List"%>
+
 <%
 //List<OrderMain> orderMainList=(List<OrderMain>)request.getAttribute("orderMainList");
 List<OrderDesc> orderDescList=(List<OrderDesc>)request.getAttribute("orderDescList");
+List<SizePrice> sizePriceList=(List<SizePrice>)request.getAttribute("sizePriceList");
 String errorMsg = (String)request.getAttribute("errorMsg");
 %>
 <!DOCTYPE html>
@@ -18,7 +21,9 @@ String errorMsg = (String)request.getAttribute("errorMsg");
 
   <% if( orderDescList == null) { %>
 
-  <% } else if(orderDescList !=null){ %>
+  <% } else if(orderDescList !=null){
+  int i=0;
+  %>
 
   <% for(OrderDesc orderDesc : orderDescList) {%>
   <h3>
@@ -31,7 +36,7 @@ String errorMsg = (String)request.getAttribute("errorMsg");
 
     <tr>
       <th>サイズ：</th>
-      <td><%=orderDesc.getSize_price_cd() %></td>
+      <td>高さ:<%=sizePriceList.get(i).getHeight() %><br>幅:<%=sizePriceList.get(i).getWidth() %></td>
     </tr>
 
     <tr>
@@ -54,6 +59,7 @@ String errorMsg = (String)request.getAttribute("errorMsg");
       <td><%=orderDesc.getPrice() %></td>
     </tr>
   </table>
+  <% i++; %>
   <% } %>
   <% } %>
 

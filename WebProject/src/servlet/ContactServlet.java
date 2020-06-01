@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 import model.Contact;
 import model.User;
 
-@WebServlet("/ContactServlet")
+@WebServlet("/Contact")
 public class ContactServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

@@ -11,9 +11,9 @@
  <header>
 
     <!-- ロゴ -->
-    <h1 class="logo">
+    <div class="logo">
       <a href="/rideau"><img class="logo" src="images/1_Primary_logo_on_transparent_203x63.png" alt="logo"></a>
-    </h1>
+    </div>
 
     <!-- nav -->
     <nav class="nav">
@@ -26,16 +26,26 @@
     </nav>
   </header>
 <main>
+<div class="contents">
 <h1>ご注文が完了しました</h1>
+</div>
+
+<div class="contents">
 <h4>ご注文ありがとうございます!<br>
 確認のためのメールを送信しましたのでご確認ください。<br>
 1営業日待っても注文メールが届かない場合、恐れ入りますが下記連絡先までご連絡ください。<br>
+</h4>
+</div>
+<div class="contents">
+<h4>
 &nbsp;●メールでのご連絡:support@rideau.com<br>
 &nbsp;●電話でのご連絡:03-3433-5111
 </h4>
+</div>
 
-
+<div class="contents">
 <a href="/rideau">サイトトップへ</a><br>
+</div>
 </main>
 
  <footer>

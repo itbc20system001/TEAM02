@@ -13,9 +13,9 @@
 <header>
 
     <!-- ロゴ -->
-    <h1 class="logo">
+    <div class="logo">
       <a href="/rideau"><img class="logo" src="images/1_Primary_logo_on_transparent_203x63.png" alt="logo"></a>
-    </h1>
+    </div>>
 
     <!-- nav -->
     <nav class="nav">
@@ -40,8 +40,9 @@ Emailアドレス:<input type = "text" name = "email"><br>
  <% if(errorMsg !=null){ %><%= errorMsg %><br><% } %>
   <% if(errorMsg1 !=null){ %><%= errorMsg1 %><br><% } %>
   </font>
-
+<div class="submitStyle">
 <input type = "submit" value = "登録" class="button">
+</div>
 <a href = "/rideau/Login">戻る</a>
 </form>
 </main>

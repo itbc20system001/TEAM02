@@ -13,9 +13,9 @@
 <header>
 
     <!-- ロゴ -->
-    <h1 class="logo">
+    <div class="logo">
       <a href="/rideau"><img class="logo" src="images/1_Primary_logo_on_transparent_203x63.png" alt="logo"></a>
-    </h1>
+    </div>>
 
     <!-- nav -->
     <nav class="nav">

@@ -12,9 +12,9 @@
 <header>
 
     <!-- ロゴ -->
-    <h1 class="logo">
+    <div class="logo">
       <a href="/rideau"><img class="logo" src="images/1_Primary_logo_on_transparent_203x63.png" alt="logo"></a>
-    </h1>
+    </div>>
 
     <!-- nav -->
     <nav class="nav">
@@ -34,7 +34,9 @@ Emailアドレス:<input type = "text" name = "email"><br>
 <font color = "ff0000">
  <% if(errorMsg !=null){ %><%= errorMsg %><br><% } %>
  </font>
+ <div class="submitStyle">
 <input type = "submit" value = "ログイン" class="button">
+</div>
 </form>
 <a href = "/rideau/SignUp">会員登録はこちら</a>
 </main>

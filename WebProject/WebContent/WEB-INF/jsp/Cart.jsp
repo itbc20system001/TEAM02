@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>カート</title>
+<title>Rideau |　カート</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -40,7 +40,6 @@
 <form action = "/rideau/CartCancel" method = "post">
 <% int i = 0;
 for(Cart c:cartList){ %>
-商品<%=i + 1%>
 <table>
 <tbody>
 <tr>
@@ -69,11 +68,11 @@ for(Cart c:cartList){ %>
 </tr>
 <tr>
 <th>単価</th>
-<td><%=c.getPrice() %></td>
+<td><%=c.getPrice() %>円</td>
 </tr>
 <tr>
 <th>合計金額</th>
-<td><%=c.getPrice()*c.getQuantity() %></td>
+<td><%=c.getPrice()*c.getQuantity() %>円</td>
 </tr>
 <tr>
 <th>削除</th>
@@ -89,9 +88,11 @@ for(Cart c:cartList){ %>
 </table>--%>
 <%-- acctionタグつける --%>
 
-<input type = "submit" value = "カートの商品削除">
+<input type = "submit" value = "カートの商品削除" class="button">
 </form>
-<a href = "/rideau/Creditcard">お支払いへ（クレジットカード情報入力）</a>
+<form acction="/rideau/Creditcard" method="get">
+<input type="submit" value="お支払いへ（クレジットカード情報入力）" class="button">
+</form>
 <%} %>
 
 </main>

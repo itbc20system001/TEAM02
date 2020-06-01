@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.Contact;
 import model.User;
-
 
 @WebServlet("/ContactServlet")
 public class ContactServlet extends HttpServlet {
@@ -36,6 +36,31 @@ public class ContactServlet extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
+//		ArrayList<Contact> contactList = (ArrayList<Contact>) session.getAttribute("contactList");
+//		if (contactList == null) {
+//			// nullなら新しく作る
+//			contactList = new ArrayList<Contact>();
+//		}
+
+String name = request.getParameter("ctc_name");
+String address = request.getParameter("ctc_address");
+String contact = request.getParameter("contact");
+
+session.setAttribute("ctc_name",name);
+session.setAttribute("ctc_address",address);
+session.setAttribute("contact",contact);
+
+
+Contact ctc = new Contact(name, address, contact);
+session.setAttribute("ctc", ctc);
+//contactList.add(ctc);
+//
+//session.setAttribute("contactList", contactList);
+
+RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/check_contact.jsp");
+dis.forward(request, response);
+
 
 	}
 }

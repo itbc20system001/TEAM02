@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>お問い合わせ送信完了</title>
+<title>Rideau |　お問い合わせ送信完了</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -27,13 +27,15 @@
   </header>
 <main>
 <h1>お問い合わせを受け付けました</h1>
-<a href = "">トップへ</a>
+<form acction ="/rideau">
+<input type="submit" value="トップへ" class="button">
+</form>
 </main>
 <footer>
 <div class="link">
 <ul>
   <li><a href="/rideau/CompanyInfo.jsp">企業概要</a></li>
-  <li><a href="">お問い合わせ</a></li>
+  <li><a href="/rideau/Contact">お問い合わせ</a></li>
  </ul>
 </div>
  <br>

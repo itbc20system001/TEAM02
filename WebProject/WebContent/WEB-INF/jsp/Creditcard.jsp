@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>お支払い</title>
+<title>Rideau |　お支払い</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
  <header>
@@ -62,10 +64,12 @@
 <input type = "tel" name="Security" size="3" maxlength="3"><br>
 <label>名義</label>
 <input type="text">
-<input type="submit" value="完了（注文内容確認へ）">
+<input type="submit" value="完了（注文内容確認へ)" class="button">
+</form>
+<form acction = "/WEB-INF/jsp/Cart.jsp">
+<input type="submit" value="カートへ" class="button">
 </form>
 
-<a href = "/WEB-INF/jsp/Cart.jsp">カートへ</a><br>
 </main>
  <footer>
 <div class="link">

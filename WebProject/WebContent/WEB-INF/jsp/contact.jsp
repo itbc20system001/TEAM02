@@ -4,8 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-
+<title>Rideau |　お問い合わせ</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <header>
@@ -30,7 +30,7 @@
 <table width="100%">
 <tbody><tr>
 	<td>お名前</td>
-	<td><input name="name" type="text"></td>
+	<td><input name="ctc_name" type="text"></td>
 </tr>
 <%-- <tr>
 	<td>フリガナ</td>
@@ -39,7 +39,7 @@
 --%>
 <tr>
 	<td>メールアドレス</td>
-	<td><input name="address" type="text"></td>
+	<td><input name="ctc_address" type="text"></td>
 </tr>
 
 <tr>

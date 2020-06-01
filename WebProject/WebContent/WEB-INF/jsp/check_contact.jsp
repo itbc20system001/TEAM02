@@ -1,10 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import = "model.Contact"%>
+    <% Contact ctc = (Contact) session.getAttribute("ctc"); %>
+
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>お問い合わせ内容確認</title>
+<title>Rideau |　お問い合わせ内容確認</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <header>
@@ -29,14 +34,14 @@
 <tbody>
 <tr>
 <th>お名前</th>
-<td><%= %></td>
+<td><%=ctc.getName() %></td>
 </tr>
 <tr>
 <th>メールアドレス</th>
-<td><%= %></td>
+<td><%= ctc.getAddress()%></td>
 <tr>
 <th>お問い合わせ内容</th>
-<td><%= %></td>
+<td><%= ctc.getContact()%></td>
 </tr></tbody>
 </table>
 <form acttion="/WEB-INF/jsp/contactSuccess.jsp">

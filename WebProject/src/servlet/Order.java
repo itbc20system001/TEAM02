@@ -75,7 +75,7 @@ public class Order extends HttpServlet {
 			Pattern p = patternLogic.getPattern(cart.getPattern_cd());
 			patternList.add(p);
 		}
-		session.setAttribute("patternList", patternList);
+		request.setAttribute("patternList", patternList);
 
 
 		//ログインしていればフォワード、していなければログインページにリダイレクト

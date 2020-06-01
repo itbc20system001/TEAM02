@@ -44,7 +44,7 @@ public class OrderConfirmation extends HttpServlet {
 		OrderDescLogic descLogic = new OrderDescLogic();
 		for(Cart cart:cartList) {
 			int pattern_cd = cart.getPattern_cd();
-			int size_price_cd = cart.getPattern_cd();
+			int size_price_cd = cart.getSize_price_cd();
 			boolean liner_flg = cart.isLiner_flag();
 			boolean hook_flg = cart.isHook_flg();
 			int quantity = cart.getQuantity();
@@ -57,12 +57,14 @@ public class OrderConfirmation extends HttpServlet {
 		session.removeAttribute("cartList");
 
 
-
-
+		//ログインしていればフォワード、していなければログインページにリダイレクト
+		if (loginUsr!=null) {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/OrderConfirmation.jsp");
 		dispatcher.forward(request, response);
+		} else  {
+			response.sendRedirect("/rideau/Login");
 
-
+		}
 	}
 
 }

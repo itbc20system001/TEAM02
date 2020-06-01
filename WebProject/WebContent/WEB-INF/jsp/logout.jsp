@@ -1,11 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<% String errorMsg = (String)request.getAttribute("errorMsg");%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>rideau</title>
+<title>ログアウトしました</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -26,16 +25,11 @@
       </ul>
     </nav>
   </header>
-   <main>
-<form action = "/rideau/SignUp" method = "post" >
-Emailアドレス:<input type = "text" name = "email"><br>
-パスワード:<input type = "password" name = "password">(半角英数8文字以上)<br>
-氏名:<input type = "text" name = "user_nm"><br>
-住所:<input type = "text" name = "address"><br>
- <% if(errorMsg !=null){ %><%= errorMsg %><br><% } %>
-<input type = "submit" value = "登録" class="button">
-<a href = "/rideau/Login">戻る</a>
-</form>
+  <main>
+<h1>ログアウトしました</h1>
+
+<a href = "/rideau">トップへ</a>
+<a href = "/rideau/Login">他のアカウントでログイン</a>
 </main>
 <footer>
 <div class="link">

@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import model.Cart;
 import model.CreditCard;
 import model.SizePrice;
+import model.User;
 import model.getSizePriceLogic;
 
 @WebServlet("/Order")
@@ -65,11 +66,14 @@ public class Order extends HttpServlet {
 		session.setAttribute("totalPrice", totalPrice);
 
 
-
-
+		//ログインしていればフォワード、していなければログインページにリダイレクト
+		User loginUsr = (User) session.getAttribute("user");
+		if (loginUsr!=null) {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/Order.jsp");
 		dispatcher.forward(request, response);
+		} else  {
+			response.sendRedirect("/rideau/Login");
 
 	}
-
+	}
 }

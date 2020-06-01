@@ -60,11 +60,11 @@
       </tr>
       <tr>
         <th>丈</th>
-        <td><%=sizePriceList.get(i).getHeight()%></td>
+        <td><%=sizePriceList.get(i).getHeight()%>cm</td>
       </tr>
       <tr>
         <th>幅</th>
-        <td><%=sizePriceList.get(i).getWidth()%></td>
+        <td><%=sizePriceList.get(i).getWidth()%>cm</td>
       </tr>
       <tr>
         <th>フックの有無</th>
@@ -150,7 +150,7 @@
 
 
       <form action="/rideau/OrderConfirmation" method="post">
-        <input type hidden> <input type="submit" value="注文確定" class="button">
+        <input type="submit" value="注文確定" class="button">
       </form>
 
       <a href="/rideau/Creditcard>クレジットカード情報入力に戻る"></a>

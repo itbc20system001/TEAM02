@@ -12,6 +12,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="css/style.css">
 <style>
 label img {
   margin: 3px;
@@ -42,7 +43,7 @@ section {
     	 target.innerHTML = "------<br>";
 
      <% for(int i=0;i<sizePriceList.size();i++){%>
-     case <%=i+2%>:
+     case <%=i+1%>:
          target.innerHTML = "<%= sizePriceList.get(i).getPrice()%>円<br>";
          break;
      <% } %>
@@ -52,6 +53,26 @@ section {
 </script>
 </head>
 <body>
+
+  <header>
+
+    <!-- ロゴ -->
+    <h1 class="logo">
+      <a href="/rideau"><img class="logo" src="images/1_Primary_logo_on_transparent_203x63.png" alt="logo"></a>
+    </h1>
+
+    <!-- nav -->
+    <nav class="nav">
+      <ul>
+        <li><a href="">ホーム</a></li>
+        <li><a href="/rideau/Shop">商品検索</a></li>
+        <li><a href="/rideau/Cart">カート</a></li>
+        <li><a href="/rideau/MyPage">マイページ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
   <h2>デザインを選んでください</h2>
   <p><%=color%>のデザイン一覧
   </p>
@@ -67,13 +88,13 @@ section {
 
     サイズを選んでください<br> <select name="size" id="Select1" onchange="selectboxChange();" required>
       <option disabled selected >選択してください</option>
-      <option value="1">100×110</option>
-      <option value="2">100×135</option>
-      <option value="3">100×140</option>
-      <option value="4">100×178</option>
-      <option value="5">100×200</option>
-      <option value="6">150×178</option>
-      <option value="7">150×200</option>
+      <option value="1">幅100×丈110</option>
+      <option value="2">幅100×丈135</option>
+      <option value="3">幅100×丈140</option>
+      <option value="4">幅100×丈178</option>
+      <option value="5">幅100×丈200</option>
+      <option value="6">幅150×丈178</option>
+      <option value="7">幅150×丈200</option>
     </select><br> オプション<br>
     <table>
       <tr>
@@ -89,8 +110,21 @@ section {
 <div id="output"></div>
 <br>数量<br>
 <input type="number" min="1" name="quantity" required>
-    <input type="submit" value="カートに入れる">
+    <input type="submit" value="カートに入れる" class="button">
   </form>
+
+  </main>
+
+   <footer>
+<div class="link">
+<ul>
+  <li><a href="/rideau/CompanyInfo.jsp">企業概要</a></li>
+  <li><a href="">お問い合わせ</a></li>
+ </ul>
+</div>
+ <br>
+  <p>&copy;Copyright Rideau All rights reserved.</p>
+   </footer>
 
 </body>
 

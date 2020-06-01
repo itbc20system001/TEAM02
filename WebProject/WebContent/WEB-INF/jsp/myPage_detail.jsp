@@ -1,3 +1,4 @@
+<%@page import="model.Pattern"%>
 <%@page import="model.SizePrice"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="model.OrderMain"%>
@@ -9,12 +10,13 @@
 	List<OrderDesc> orderDescList = (List<OrderDesc>) request.getAttribute("orderDescList");
 	List<SizePrice> sizePriceList = (List<SizePrice>) request.getAttribute("sizePriceList");
 	String errorMsg = (String) request.getAttribute("errorMsg");
+	List<Pattern> patternList = (List<Pattern>) request.getAttribute("patternList");
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>注文詳細</title>
+<title>Rideau | 注文詳細</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -47,21 +49,21 @@
  %> <%
  	for (OrderDesc orderDesc : orderDescList) {
  %>
-  <h3>
-    詳細<%=orderDesc.getOrder_desc_id()%></h3>
+ <div>
+  <h3>詳細</h3>
   <table>
     <tr>
-      <th>柄：</th>
-      <td><%=orderDesc.getPattern_cd()%></td>
+      <th>柄</th>
+      <td> <div class="pattern"><img src=<%= patternList.get(i).getPattern_img() %>></div></td>
     </tr>
 
     <tr>
-      <th>サイズ：</th>
-      <td>丈:<%=sizePriceList.get(i).getHeight()%><br>幅:<%=sizePriceList.get(i).getWidth()%></td>
+      <th>サイズ</th>
+      <td>丈<%=sizePriceList.get(i).getHeight()%><br>幅<%=sizePriceList.get(i).getWidth()%></td>
     </tr>
 
     <tr>
-      <th>裏地：</th>
+      <th>裏地</th>
       <td>
         <%
         	if (orderDesc.isLiner_flg()) {
@@ -74,7 +76,7 @@
     </tr>
 
     <tr>
-      <th>タイプ：</th>
+      <th>タイプ</th>
       <td>
         <%
         	if (orderDesc.isHook_flg()) {
@@ -87,12 +89,12 @@
     </tr>
 
     <tr>
-      <th>個数：</th>
+      <th>個数</th>
       <td><%=orderDesc.getQuantity()%></td>
     </tr>
 
     <tr>
-      <th>価格：</th>
+      <th>価格</th>
       <td><%=orderDesc.getPrice()%></td>
     </tr>
   </table>
@@ -102,23 +104,23 @@
  	}
  %> <%
  	}
- %> </main>
+ %> </div></main>
 
   <p>
     <a href="/rideau/MyPage">マイページへ戻る</a>
   </p>
   </main>
 
-    <footer>
-<div class="link">
-<ul>
-  <li><a href="/rideau/CompanyInfo.jsp">企業概要</a></li>
-  <li><a href="">お問い合わせ</a></li>
- </ul>
-</div>
- <br>
-  <p>&copy;Copyright Rideau All rights reserved.</p>
-   </footer>
+  <footer>
+    <div class="link">
+      <ul>
+        <li><a href="/rideau/CompanyInfo.jsp">企業概要</a></li>
+        <li><a href="/rideau/Contact">お問い合わせ</a></li>
+      </ul>
+    </div>
+    <br>
+    <p>&copy;Copyright Rideau All rights reserved.</p>
+  </footer>
 
 </body>
 </html>

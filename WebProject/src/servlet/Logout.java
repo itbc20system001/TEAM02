@@ -26,6 +26,7 @@ public class Logout extends HttpServlet {
 			response.sendRedirect("/rideau/Login");
 		}else {
 			session.removeAttribute("user");
+			session.removeAttribute("cartList");
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/logout.jsp");
 			dispatcher.forward(request, response);
 

@@ -35,7 +35,7 @@ public class CartServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		User loginUsr = (User) session.getAttribute("user");
 		if (loginUsr!=null) {
-	    	//リスト作成
+	    	//リスト作成あ
 	    	ArrayList<Cart> cartList = (ArrayList<Cart>) session.getAttribute("cartList");
 
 			GetPatternListLogic patternLogic = new GetPatternListLogic();

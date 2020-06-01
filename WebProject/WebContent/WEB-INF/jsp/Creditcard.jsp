@@ -11,7 +11,7 @@
 <body>
  <header>
 
-    <!-- ロゴ -->
+    <!-- ロゴあ -->
     <div class="logo">
       <a href="/rideau"><img class="logo" src="images/1_Primary_logo_on_transparent_203x63.png" alt="logo"></a>
     </div>
@@ -30,9 +30,9 @@
 <h1>クレジットカード情報入力</h1>
 <form action = "/rideau/Order" method = "post">
 <label>クレジットカード番号：</label>
-<input type = "text" name="creditCard" size="16" maxlength="16"><br>
+<input type = "text" name="creditCard" size="16" maxlength="16" required><br>
 <label>クレジットカード有効期限</label>
-<select name = month>
+<select name = "month" required>
 <option value="January">1</option>
 <option value="February">2</option>
 <option value="March">3</option>
@@ -46,7 +46,7 @@
 <option value="November">11</option>
 <option value="December">12</option>
 </select>
-<select name = year>
+<select name = year required>
 <option value="2020">2020</option>
 <option value="2021">2021</option>
 <option value="2022">2022</option>
@@ -61,12 +61,12 @@
 </select><br>
 
 <label>セキュリティコード</label>
-<input type = "tel" name="Security" size="3" maxlength="3"><br>
+<input type = "tel" name="Security" size="3" maxlength="3" required><br>
 <label>名義</label>
-<input type="text">
+<input type="text" required>
 <input type="submit" value="完了（注文内容確認へ)" class="button">
 </form>
-<form acction = "/WEB-INF/jsp/Cart.jsp">
+<form acction = "/rideau/Cart">
 <input type="submit" value="カートへ" class="button">
 </form>
 

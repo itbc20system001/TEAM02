@@ -20,7 +20,7 @@
 <body>
 <header>
 
-    <!-- ロゴ -->
+    <!-- ロゴ あ-->
     <div class="logo">
       <a href="/rideau"><img class="logo" src="images/1_Primary_logo_on_transparent_203x63.png" alt="logo"></a>
     </div>
@@ -84,7 +84,7 @@ for(Cart c:cartList){ %>
 </tr>
 <tr>
 <th>削除</th>
-<td><input type ="checkbox" name="cancel" value="<%= i %>"></td>
+<td><input type ="checkbox" name="cancel" value="<%= i %>" required></td>
 </tr>
 
 </tbody>
@@ -96,7 +96,7 @@ for(Cart c:cartList){ %>
 </table>--%>
 <%-- acctionタグつける --%>
 
-<input type = "submit" value = "カートの商品削除" class="button">
+<input type = "submit" value = "カートの商品削除" class="button-cancel">
 </form>
 <form action="/rideau/Creditcard" method="get">
 <input type="submit" value="お支払いへ（クレジットカード情報入力）" class="button">

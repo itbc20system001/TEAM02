@@ -115,6 +115,26 @@ header {
   background    : #ffffff;     /* 文字色     */
 }
 
+/* カート削除ボタン */
+.button-cancel{
+  display       : inline-block;
+  font-weight:bold;
+  border-radius : 7px;          /* 角丸       */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 12px 49px;   /* 余白       */
+  background    : #e01a0a;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  border        : 2px solid #e01a0a;    /* 枠の指定 */
+  margin: 2em 0;
+}
+.button-cancel:hover {
+  color         : #e01a0a;     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
+}
+
 /* top写真 */
 .mainphoto {
 	text-align: center;

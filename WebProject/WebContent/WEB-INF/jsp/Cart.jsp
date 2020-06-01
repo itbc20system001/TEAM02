@@ -38,6 +38,7 @@
 <form action = "/rideau/CartCancel" method = "post">
 <% int i = 0;
 for(Cart c:cartList){ %>
+商品<%=i + 1%>
 <table>
 <tbody>
 <tr>

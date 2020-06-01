@@ -14,9 +14,9 @@ User loginUsr = (User) session.getAttribute("user");%>
 <header>
 
     <!-- ロゴ -->
-    <h1 class="logo">
+    <div class="logo">
       <a href="/rideau"><img class="logo" src="images/1_Primary_logo_on_transparent_203x63.png" alt="logo"></a>
-    </h1>
+    </div>>
 
     <!-- nav -->
     <nav class="nav">
@@ -63,7 +63,9 @@ User loginUsr = (User) session.getAttribute("user");%>
 <font color = "ff0000">
  <% if(errorMsg !=null){ %><%= errorMsg %><br><% } %>
 </font>
+<div class="submitStyle">
 <input type = "submit" value = "登録" class="button">
+</div>
 </form>
 <a href = "/rideau/MyPage">戻る</a>
 <a href="/rideau/">トップ画面へ</a>

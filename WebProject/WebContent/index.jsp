@@ -52,7 +52,9 @@
 
 <div class=ranking>
 <h2>人気のデザイン</h2>
+<div class="pattern">
 <img alt="" src="images/pattern/b01.jpg">
+</div>
 </div>
   </main>
 
@@ -61,7 +63,7 @@
 <div class="link">
 <ul>
   <li><a href="/rideau/CompanyInfo.jsp">企業概要</a></li>
-  <li><a href="">お問い合わせ</a></li>
+  <li><a href="/rideau/Contact">お問い合わせ</a></li>
  </ul>
 </div>
  <br>

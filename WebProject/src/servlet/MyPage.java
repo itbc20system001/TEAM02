@@ -12,10 +12,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.GetPatternListLogic;
 import model.OrderDesc;
 import model.OrderDescLogic;
 import model.OrderMain;
 import model.OrderMainLogic;
+import model.Pattern;
 import model.SizePrice;
 import model.User;
 import model.getSizePriceLogic;
@@ -52,14 +54,23 @@ public class MyPage extends HttpServlet {
 				getSizePriceLogic getSPL = new getSizePriceLogic();
 				List<SizePrice> sizePriceList = new ArrayList<SizePrice>();
 
+				GetPatternListLogic patternLogic = new GetPatternListLogic();
+				List<Pattern> patternList = new ArrayList<Pattern>();
+
+
+
 				for(OrderDesc orderDesc:orderDescList){
 					SizePrice sp = new SizePrice();
 					sp = getSPL.execute(orderDesc.getSize_price_cd());
 					sizePriceList.add(sp);
 
+					Pattern p = patternLogic.getPattern(orderDesc.getPattern_cd());
+					patternList.add(p);
+
 				}
 				request.setAttribute("sizePriceList", sizePriceList);
 				request.setAttribute("orderDescList", orderDescList);
+				request.setAttribute("patternList", patternList);
 			}
 
 

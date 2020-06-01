@@ -11,7 +11,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Rideau | 商品注文</title>
 <link rel="stylesheet" href="css/style.css">
 <style>
 label img {
@@ -113,7 +113,9 @@ section {
 <br>数量<br>
 <input type="number" min="1" name="quantity" required>
 <br>
+<div class="submitStyle">
     <input type="submit" value="カートに入れる" class="button">
+    </div>
   </form>
 
   </main>
@@ -122,7 +124,7 @@ section {
 <div class="link">
 <ul>
   <li><a href="/rideau/CompanyInfo.jsp">企業概要</a></li>
-  <li><a href="">お問い合わせ</a></li>
+  <li><a href="/rideau/Contact">お問い合わせ</a></li>
  </ul>
 </div>
  <br>

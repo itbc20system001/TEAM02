@@ -63,12 +63,12 @@ for(Cart c:cartList){ %>
 <td><%=c.getSize_price_cd() %></td>
 </tr>
 <tr>
-<th>フックの有無</th>
+<th>裏地の有無</th>
 <td><% if(c.isHook_flg()){ %>有り<%} else { %>無し<%} %></td>
 </tr>
 <tr>
-<th>裏地の有無</th>
-<td><% if(c.isLiner_flag()){ %>有り<%} else { %>無し<%} %></td>
+<th>タイプ</th>
+<td><% if(c.isLiner_flag()){ %>レールが隠れる<%} else { %>レールが隠れない<%} %></td>
 </tr>
 <tr>
 <th>数量</th>

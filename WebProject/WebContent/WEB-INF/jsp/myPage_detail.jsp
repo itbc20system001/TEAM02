@@ -59,7 +59,7 @@
 
     <tr>
       <th>サイズ</th>
-      <td>丈<%=sizePriceList.get(i).getHeight()%><br>幅<%=sizePriceList.get(i).getWidth()%></td>
+      <td>丈<%=sizePriceList.get(i).getHeight() + "cm"%><br>幅<%=sizePriceList.get(i).getWidth() + "cm"%></td>
     </tr>
 
     <tr>
@@ -80,9 +80,9 @@
       <td>
         <%
         	if (orderDesc.isHook_flg()) {
-        %>有り<%
+        %>レールが隠れる<%
         	} else {
-        %>無し<%
+        %>レールが隠れない<%
         	}
         %>
       </td>
@@ -90,12 +90,12 @@
 
     <tr>
       <th>個数</th>
-      <td><%=orderDesc.getQuantity()%></td>
+      <td><%=orderDesc.getQuantity() + "個"%></td>
     </tr>
 
     <tr>
       <th>価格</th>
-      <td><%=orderDesc.getPrice()%></td>
+      <td><%=orderDesc.getPrice() + "円"%></td>
     </tr>
   </table>
   <%

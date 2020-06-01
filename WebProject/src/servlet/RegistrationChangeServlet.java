@@ -29,10 +29,10 @@ public class RegistrationChangeServlet extends HttpServlet {
 		String address = request.getParameter("addressChange");
 		String errorMsg = "";
 
-		if(email != ""  && email.matches(".*@.*") == false) {
+		if(email != ""  && email.matches(".*.@..*") == false) {
 			errorMsg = "変更後のEmailアドレスを正しく入力してください。" ;
 		}
-		if(password != ""  && password.length()<=8) {
+		if(password != ""  && password.length()<8) {
 			errorMsg = errorMsg + "変更後のパスワードは8文字以上で入力してください。";
 		}
 		if(email == ""  &&  password == "" && user_nm == ""&& address == "") {

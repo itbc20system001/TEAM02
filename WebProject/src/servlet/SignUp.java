@@ -33,7 +33,7 @@ public class SignUp extends HttpServlet {
 		String errorMsg = "";
 		String errorMsg1 = "";
 
-		if(email.matches(".*@.*") == false) {
+		if(email.matches(".*.@..*") == false) {
 			errorMsg = "Emailアドレスを正しく入力してください。" ;
 			request.setAttribute("errorMsg",errorMsg);
 		}

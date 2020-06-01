@@ -12,9 +12,9 @@
   <header>
 
     <!-- ロゴ -->
-    <h1 class="logo">
+    <div class="logo">
       <a href="/rideau"><img class="logo" src="images/1_Primary_logo_on_transparent_203x63.png" alt="logo"></a>
-    </h1>
+    </div>
 
     <!-- nav -->
     <nav class="nav">
@@ -40,11 +40,13 @@
 
   <div class="contents">
 
+  <img src="images/shopping.jpg">
     <p>お買い物を始める</p>
     <a class="btn" href="/rideau/Shop">おかいもの</a><br>
   </div>
 
   <div class="contents">
+  <img src="images/login.jpg">
    <p> ログイン/会員登録はこちら</p>
     <a class="btn" href="/rideau/Login">ログイン</a><br>
     <a class="btn" href="/rideau/SignUp">新規会員登録</a>

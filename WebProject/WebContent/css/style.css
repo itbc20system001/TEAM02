@@ -108,6 +108,7 @@ header {
   line-height   : 1em;         /* 1行の高さ  */
   transition    : .3s;         /* なめらか変化 */
   border        : 2px solid #e78f00;    /* 枠の指定 */
+  margin: 2em 0;
 }
 .button:hover {
   color         : #e78f00;     /* 背景色     */

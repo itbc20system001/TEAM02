@@ -89,7 +89,7 @@ section {
     </div>
 
     サイズを選んでください<br> <select name="size" id="Select1" onchange="selectboxChange();" required>
-      <option disabled selected >選択してください</option>
+      <option value="" disabled selected >選択してください</option>
       <option value="1">幅100×丈110</option>
       <option value="2">幅100×丈135</option>
       <option value="3">幅100×丈140</option>

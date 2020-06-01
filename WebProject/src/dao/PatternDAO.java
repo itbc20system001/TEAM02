@@ -10,13 +10,14 @@ import java.util.List;
 import model.Pattern;
 
 public class PatternDAO {
-	/*public static void main(String[] args) {
+/*public static void main(String[] args) {
 		GetPatternListLogic log=new GetPatternListLogic();
 		List<String> pattern_imgList=new ArrayList<>();
-		pattern_imgList=log.execute();
-		System.out.println(pattern_imgList);
-	}*/
-
+		Pattern p=new Pattern();
+		p=log.getPattern(3);
+		System.out.println(p.getPattern_img());
+	}
+*/
 	//　データベース接続に使用する情報
 	private final String JDBC_URL = "jdbc:mariadb://localhost/rideau";
 	private final String DB_USER = "root";

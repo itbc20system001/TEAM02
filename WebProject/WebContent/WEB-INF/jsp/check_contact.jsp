@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>お問い合わせ内容確認</title>
 </head>
 <body>
 <header>
@@ -17,7 +17,7 @@
     <!-- nav -->
     <nav class="nav">
       <ul>
-        <li><a href="">ホーム</a></li>
+        <li><a href="/rideau">ホーム</a></li>
         <li><a href="/rideau/Shop">商品検索</a></li>
         <li><a href="/rideau/Cart">カート</a></li>
         <li><a href="/rideau/MyPage">マイページ</a></li>
@@ -39,7 +39,9 @@
 <td><%= %></td>
 </tr></tbody>
 </table>
-<a href = "/WEB-INF/jsp/contastSuccess.jsp">この内容で送信する</a>
+<form acttion="/WEB-INF/jsp/contactSuccess.jsp">
+<input type="submit" value="この内容で送信する" class="button">
+</form>
 </main>
  <footer>
 <div class="link">

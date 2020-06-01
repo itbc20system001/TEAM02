@@ -24,7 +24,7 @@
     <!-- nav -->
     <nav class="nav">
       <ul>
-        <li><a href="">ホーム</a></li>
+        <li><a href="/rideau">ホーム</a></li>
         <li><a href="/rideau/Shop">商品検索</a></li>
         <li><a href="/rideau/Cart">カート</a></li>
         <li><a href="/rideau/MyPage">マイページ</a></li>
@@ -34,7 +34,9 @@
   <main>
 <h1>カート</h1>
 <p>${user.getUser_nm() }さんのカート内の商品</p><br>
-
+<% if (cartList == null) { %>
+<p>カートは空です</p>
+<%}else{ %>
 <form action = "/rideau/CartCancel" method = "post">
 <% int i = 0;
 for(Cart c:cartList){ %>
@@ -89,7 +91,7 @@ for(Cart c:cartList){ %>
 <input type = "submit" value = "カートの商品削除">
 </form>
 <a href = "/rideau/Creditcard">お支払いへ（クレジットカード情報入力）</a>
-
+<%} %>
 
 </main>
 <footer>

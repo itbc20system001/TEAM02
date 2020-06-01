@@ -35,6 +35,20 @@ public class CartServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		User loginUsr = (User) session.getAttribute("user");
 		if (loginUsr!=null) {
+	    	//リスト作成
+	    	ArrayList<Cart> cartList = (ArrayList<Cart>) session.getAttribute("cartList");
+
+			GetPatternListLogic patternLogic = new GetPatternListLogic();
+			List<Pattern> patternList = new ArrayList<Pattern>();
+
+			for(Cart cart:cartList){
+				Pattern p = patternLogic.getPattern(cart.getPattern_cd());
+				patternList.add(p);
+
+			}
+			request.setAttribute("patternList", patternList);
+
+
 			RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/Cart.jsp");
 			dis.forward(request, response);
 		} else  {

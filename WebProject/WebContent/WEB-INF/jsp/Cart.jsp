@@ -7,14 +7,14 @@
     <% User user = (User) session.getAttribute("user"); %>
     <%
     List<Cart> cartList= (List<Cart>) session.getAttribute("cartList");
-    List<Pattern> patternList= (List<Pattern>) session.getAttribute("patternList");
+    List<Pattern> patternList= (List<Pattern>) request.getAttribute("patternList");
     %>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Rideau |　カート</title>
+<title>Rideau | カート</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -98,7 +98,7 @@ for(Cart c:cartList){ %>
 
 <input type = "submit" value = "カートの商品削除" class="button">
 </form>
-<form acction="/rideau/Creditcard" method="get">
+<form action="/rideau/Creditcard" method="get">
 <input type="submit" value="お支払いへ（クレジットカード情報入力）" class="button">
 </form>
 <%} %>

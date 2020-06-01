@@ -11,8 +11,27 @@
 <head>
 <meta charset="UTF-8">
 <title>カート</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<header>
+
+    <!-- ロゴ -->
+    <h1 class="logo">
+      <a href="/rideau"><img class="logo" src="images/1_Primary_logo_on_transparent_203x63.png" alt="logo"></a>
+    </h1>
+
+    <!-- nav -->
+    <nav class="nav">
+      <ul>
+        <li><a href="">ホーム</a></li>
+        <li><a href="/rideau/Shop">商品検索</a></li>
+        <li><a href="/rideau/Cart">カート</a></li>
+        <li><a href="/rideau/MyPage">マイページ</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
 <h1>カート</h1>
 <p>${user.getUser_nm() }さんのカート内の商品</p><br>
 
@@ -71,5 +90,19 @@ for(Cart c:cartList){ %>
 </form>
 <a href = "/rideau/Creditcard">お支払いへ（クレジットカード情報入力）</a>
 
+
+</main>
+<footer>
+<div class="link">
+<ul>
+  <li><a href="/rideau/CompanyInfo.jsp">企業概要</a></li>
+  <li><a href="">お問い合わせ</a></li>
+ </ul>
+</div>
+ <br>
+  <p>&copy;Copyright Rideau All rights reserved.</p>
+   </footer>
+
 </body>
+
 </html>

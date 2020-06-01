@@ -2,6 +2,7 @@ package servlet;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.Cart;
+import model.GetPatternListLogic;
+import model.Pattern;
 import model.SizePrice;
 import model.User;
 import model.getSizePriceLogic;
@@ -84,6 +87,16 @@ public class CartServlet extends HttpServlet {
 		cartList.add(c);
         //セッションスコープにリストを入れる
 		session.setAttribute("cartList", cartList);
+
+		GetPatternListLogic patternLogic = new GetPatternListLogic();
+		List<Pattern> patternList = new ArrayList<Pattern>();
+
+		for(Cart cart:cartList){
+			Pattern p = patternLogic.getPattern(cart.getPattern_cd());
+			patternList.add(p);
+
+		}
+		request.setAttribute("patternList", patternList);
 
 		User loginUsr = (User) session.getAttribute("user");
 

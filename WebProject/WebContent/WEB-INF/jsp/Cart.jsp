@@ -1,3 +1,4 @@
+<%@page import="model.Pattern"%>
 <%@page import="java.util.List"%>
 <%@page import="model.Cart"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -5,7 +6,10 @@
     <%@ page import = "model.User"%>
     <% User user = (User) session.getAttribute("user"); %>
     <%
-    List<Cart> cartList= (List<Cart>) session.getAttribute("cartList");%>
+    List<Cart> cartList= (List<Cart>) session.getAttribute("cartList");
+    List<Pattern> patternList= (List<Pattern>) session.getAttribute("patternList");
+    %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,7 +48,11 @@ for(Cart c:cartList){ %>
 <tbody>
 <tr>
 <th>柄</th>
- <td><%=c.getPattern_cd()%> </td>
+ <td><div class="pattern">
+ <img src=<%= patternList.get(i).getPattern_img() %>>
+ </div>
+
+  </td>
 </tr>
 <tr>
 <th>サイズ縦</th>

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>企業情報</title>
+<title>Rideau | 企業情報</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -79,7 +79,7 @@
  <footer>
 <ul>
   <li><a href="/rideau/CompanyInfo.jsp">企業概要</a></li>
-  <li><a href="">お問い合わせ</a></li>
+  <li><a href="/rideau/Contact">お問い合わせ</a></li>
  </ul>
  <br>
   <p>&copy;Copyright Rideau All rights reserved.</p>

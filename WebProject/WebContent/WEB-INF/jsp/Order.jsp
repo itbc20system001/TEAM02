@@ -36,7 +36,7 @@
         <li><a href="/rideau">ホーム</a></li>
         <li><a href="/rideau/Shop">商品検索</a></li>
         <li><a href="/rideau/Cart">カート</a></li>
-        <li><a href="/rideau/Login">ログイン</a></li>
+        <li><a href="/rideau/MyPage">マイページ</a></li>
       </ul>
     </nav>
   </header>
@@ -59,11 +59,11 @@
         <td><%=cart.getPattern_cd()%></td>
       </tr>
       <tr>
-        <th>丈:</th>
+        <th>丈</th>
         <td><%=sizePriceList.get(i).getHeight()%></td>
       </tr>
       <tr>
-        <th>幅:</th>
+        <th>幅</th>
         <td><%=sizePriceList.get(i).getWidth()%></td>
       </tr>
       <tr>
@@ -121,13 +121,13 @@
       <table>
         <tbody>
           <tr>
-            <th>お届け先住所
-            <th>
+            <th>お届け先住所</th>
+
             <td><%=loginUsr.getAddress()%></td>
           </tr>
           <tr>
             <th>配送方法
-            <th>
+           </th>
             <td>佐川急便</td>
         </tbody>
       </table>

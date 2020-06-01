@@ -21,14 +21,19 @@
         <li><a href="/rideau">ホーム</a></li>
         <li><a href="/rideau/Shop">商品検索</a></li>
         <li><a href="/rideau/Cart">カート</a></li>
-        <li><a href="/rideau/Login">ログイン</a></li>
+        <li><a href="/rideau/MyPage">マイページ</a></li>
       </ul>
     </nav>
   </header>
 <main>
-<h2>ご注文ありがとうございます!</h2><br>
-<h2>商品到着まで今しばらくお待ちください</h2><br>
-<h2>またのご利用を心よりお待ちしております</h2>
+<h1>ご注文が完了しました</h1>
+<h4>ご注文ありがとうございます!<br>
+確認のためのメールを送信しましたのでご確認ください。<br>
+1営業日待っても注文メールが届かない場合、恐れ入りますが下記連絡先までご連絡ください。<br>
+&nbsp;●メールでのご連絡:support@redeau.com<br>
+&nbsp;●電話でのご連絡:03-3433-5111
+</h4>
+
 
 <a href="/rideau">サイトトップへ</a><br>
 </main>

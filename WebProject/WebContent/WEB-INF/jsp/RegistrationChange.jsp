@@ -7,7 +7,7 @@ User loginUsr = (User) session.getAttribute("user");%>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>登録情報変更</title>
+<title>Rideau | 登録情報変更</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -46,7 +46,7 @@ User loginUsr = (User) session.getAttribute("user");%>
     <tr>
       <th>パスワード：</th>
       <td>非表示</td>
-      <td><input type = "password" name = "passwordChange">(半角英数8文字以上)</td>
+      <td><input type = "password" name = "passwordChange"><br>(半角英数8文字以上)</td>
     </tr>
     <tr>
       <th>氏名：</th>
@@ -60,7 +60,9 @@ User loginUsr = (User) session.getAttribute("user");%>
     </tr>
   </table>
 
+<font color = "ff0000">
  <% if(errorMsg !=null){ %><%= errorMsg %><br><% } %>
+</font>
 <input type = "submit" value = "登録" class="button">
 </form>
 <a href = "/rideau/MyPage">戻る</a>
@@ -70,7 +72,7 @@ User loginUsr = (User) session.getAttribute("user");%>
 <div class="link">
 <ul>
   <li><a href="/rideau/CompanyInfo.jsp">企業概要</a></li>
-  <li><a href="">お問い合わせ</a></li>
+  <li><a href="/rideau/Contact">お問い合わせ</a></li>
  </ul>
 </div>
  <br>

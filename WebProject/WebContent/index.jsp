@@ -19,10 +19,13 @@
     <!-- nav -->
     <nav class="nav">
       <ul>
-        <li><a href="/rideau">ホーム</a></li>
-        <li><a href="/rideau/Shop">商品検索</a></li>
-        <li><a href="/rideau/Cart">カート</a></li>
-        <li><a href="/rideau/MyPage">マイページ</a></li>
+        <li><a href="/rideau">Top</a></li>
+        <li><a href="/rideau/Shop">Search</a>
+
+        </li>
+
+        <li><a href="/rideau/Cart">Cart</a></li>
+        <li><a href="/rideau/MyPage">Mypage</a></li>
       </ul>
     </nav>
   </header>

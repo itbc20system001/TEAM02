@@ -14,6 +14,8 @@ import javax.servlet.http.HttpSession;
 
 import model.Cart;
 import model.CreditCard;
+import model.GetPatternListLogic;
+import model.Pattern;
 import model.SizePrice;
 import model.User;
 import model.getSizePriceLogic;
@@ -64,6 +66,16 @@ public class Order extends HttpServlet {
 			totalPrice+=(cart.getPrice()*cart.getQuantity());
 		}
 		session.setAttribute("totalPrice", totalPrice);
+
+		//柄の画像表示
+		GetPatternListLogic patternLogic = new GetPatternListLogic();
+		List<Pattern> patternList = new ArrayList<Pattern>();
+
+		for(Cart cart:cartList){
+			Pattern p = patternLogic.getPattern(cart.getPattern_cd());
+			patternList.add(p);
+		}
+		session.setAttribute("patternList", patternList);
 
 
 		//ログインしていればフォワード、していなければログインページにリダイレクト

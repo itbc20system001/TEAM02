@@ -1,3 +1,4 @@
+<%@page import="model.Pattern"%>
 <%@page import="java.util.List"%>
 <%@page import="model.SizePrice"%>
 <%@page import="model.User"%>
@@ -11,6 +12,7 @@
 	int totalPrice = (Integer) session.getAttribute("totalPrice");
 	ArrayList<Cart> cartList = (ArrayList<Cart>) session.getAttribute("cartList");
 	List<SizePrice> sizePriceList = (List<SizePrice>) request.getAttribute("sizePriceList");
+	List<Pattern> patternList = (List<Pattern>) request.getAttribute("patternList");
 %>
 
 
@@ -18,7 +20,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>ご注文内容確認</title>
+<title>Rideau | ご注文内容確認</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -56,7 +58,8 @@
     <tbody>
       <tr>
         <th>柄</th>
-        <td><%=cart.getPattern_cd()%></td>
+        <td><img src=<%= patternList.get(i).getPattern_img() %>>
+</td>
       </tr>
       <tr>
         <th>丈</th>
@@ -120,9 +123,12 @@
       <h1>お届け情報</h1>
       <table>
         <tbody>
+        <tr>
+            <th>ご注文者様氏名</th>
+            <td><%=loginUsr.getUser_nm()%></td>
+          </tr>
           <tr>
             <th>お届け先住所</th>
-
             <td><%=loginUsr.getAddress()%></td>
           </tr>
           <tr>
@@ -163,7 +169,7 @@
       <footer>
         <ul>
           <li><a href="/rideau/CompanyInfo.jsp">企業概要</a></li>
-          <li><a href="">お問い合わせ</a></li>
+          <li><a href="/rideau/Contact">お問い合わせ</a></li>
         </ul>
         <br>
         <p>&copy;Copyright Rideau All rights reserved.</p>

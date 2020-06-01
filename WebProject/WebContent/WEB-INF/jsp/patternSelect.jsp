@@ -64,7 +64,7 @@ section {
     <!-- nav -->
     <nav class="nav">
       <ul>
-        <li><a href="">ホーム</a></li>
+        <li><a href="/rideau">ホーム</a></li>
         <li><a href="/rideau/Shop">商品検索</a></li>
         <li><a href="/rideau/Cart">カート</a></li>
         <li><a href="/rideau/MyPage">マイページ</a></li>
@@ -79,11 +79,13 @@ section {
 
   <form name="form1" action="/rideau/Cart" method="post">
     <div class="selection-group">
+    <div class="pattern">
    <% for(Pattern p:patternList){ %>
       <input id="<%=p.getPattern_cd() %>" type="radio" name="pattern" value="<%=p.getPattern_cd() %>" required> <label for="<%= p.getPattern_cd()%>"> <img src=<%= p.getPattern_img() %>>
 
       </label>
       <%} %>
+      </div>
     </div>
 
     サイズを選んでください<br> <select name="size" id="Select1" onchange="selectboxChange();" required>
@@ -106,10 +108,11 @@ section {
         <td><input type="radio" name="hook" value="0" required>レールが隠れる<input type="radio" name="hook" value="1" required>レールが隠れない</td>
       </tr>
     </table>
-    <p>金額</p>
+    <p>単価</p>
 <div id="output"></div>
 <br>数量<br>
 <input type="number" min="1" name="quantity" required>
+<br>
     <input type="submit" value="カートに入れる" class="button">
   </form>
 

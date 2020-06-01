@@ -93,19 +93,19 @@ header {
 /* 送信ボタン用 class=buttonの追加お願いします*/
 .button {
   display       : inline-block;
-  border-radius : 5%;          /* 角丸       */
-  font-size     : 18pt;        /* 文字サイズ */
+  font-weight:bold;
+  border-radius : 7px;          /* 角丸       */
   text-align    : center;      /* 文字位置   */
   cursor        : pointer;     /* カーソル   */
   padding       : 12px 49px;   /* 余白       */
-  background    : #945b23;     /* 背景色     */
+  background    : #e78f00;     /* 背景色     */
   color         : #ffffff;     /* 文字色     */
   line-height   : 1em;         /* 1行の高さ  */
   transition    : .3s;         /* なめらか変化 */
-  border        : 2px solid #945b23;    /* 枠の指定 */
+  border        : 2px solid #e78f00;    /* 枠の指定 */
 }
 .button:hover {
-  color         : #945b23;     /* 背景色     */
+  color         : #e78f00;     /* 背景色     */
   background    : #ffffff;     /* 文字色     */
 }
 
@@ -178,14 +178,24 @@ footer li a:hover {
 
 /* 表のデザイン */
 table{
-	border-color: #945b23;
+border-collapse: collapse;
 }
 
+th,td{
+border: 2px #945b23 solid;
+	padding: 0.5em 4em;
+}
 th{
 	background-color: #f8eed5;
+
 }
 
 /* colorSelect.jsp */
 .colors img {
 	height:200px;
 }
+
+.pattern img{
+	height:200px;
+}
+

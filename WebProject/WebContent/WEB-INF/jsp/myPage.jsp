@@ -29,7 +29,7 @@ String errorMsg = (String)request.getAttribute("errorMsg");
     <!-- nav -->
     <nav class="nav">
       <ul>
-        <li><a href="">ホーム</a></li>
+        <li><a href="/rideau">ホーム</a></li>
         <li><a href="/rideau/Shop">商品検索</a></li>
         <li><a href="/rideau/Cart">カート</a></li>
         <li><a href="/rideau/MyPage">マイページ</a></li>
@@ -65,7 +65,7 @@ String errorMsg = (String)request.getAttribute("errorMsg");
   <h2>注文履歴</h2>
 
   <% if (orderMainList == null) {%>
-  注文履歴はありません
+  <p>注文履歴はありません</p>
 
   <% } else if(orderMainList !=null){ %>
   <% for(OrderMain orderMain : orderMainList){ %>
@@ -90,6 +90,7 @@ String errorMsg = (String)request.getAttribute("errorMsg");
     <% } %>
     <% } %>
   </table>
+  <a href = "/rideau/Logout">ログアウト</a>
   </main>
 
   <footer>

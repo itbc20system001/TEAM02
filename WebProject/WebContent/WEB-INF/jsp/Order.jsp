@@ -58,8 +58,11 @@
     <tbody>
       <tr>
         <th>柄</th>
-        <td><img src=<%= patternList.get(i).getPattern_img() %>>
-</td>
+
+        <td><div class="pattern">
+            <img src=<%=patternList.get(i).getPattern_img()%>>
+          </div></td>
+
       </tr>
       <tr>
         <th>丈</th>
@@ -123,7 +126,7 @@
       <h1>お届け情報</h1>
       <table>
         <tbody>
-        <tr>
+          <tr>
             <th>ご注文者様氏名</th>
             <td><%=loginUsr.getUser_nm()%></td>
           </tr>
@@ -132,8 +135,7 @@
             <td><%=loginUsr.getAddress()%></td>
           </tr>
           <tr>
-            <th>配送方法
-           </th>
+            <th>配送方法</th>
             <td>佐川急便</td>
         </tbody>
       </table>

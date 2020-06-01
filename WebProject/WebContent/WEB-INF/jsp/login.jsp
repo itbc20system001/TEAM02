@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>rideau</title>
+<title>Rideau | ログイン</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -27,10 +27,13 @@
     </nav>
   </header>
    <main>
+    <h2>ログイン</h2>
 <form action = "/rideau/Login" method = "post" >
 Emailアドレス:<input type = "text" name = "email"><br>
 パスワード:<input type = "password" name = "password"><br>
+<font color = "ff0000">
  <% if(errorMsg !=null){ %><%= errorMsg %><br><% } %>
+ </font>
 <input type = "submit" value = "ログイン" class="button">
 </form>
 <a href = "/rideau/SignUp">会員登録はこちら</a>
@@ -39,7 +42,7 @@ Emailアドレス:<input type = "text" name = "email"><br>
 <div class="link">
 <ul>
   <li><a href="/rideau/CompanyInfo.jsp">企業概要</a></li>
-  <li><a href="">お問い合わせ</a></li>
+  <li><a href="/rideau/Contact">お問い合わせ</a></li>
  </ul>
 </div>
  <br>

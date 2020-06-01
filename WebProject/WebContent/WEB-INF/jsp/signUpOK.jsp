@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ page import="model.User"%>
-<% User loginUsr = (User) session.getAttribute("user");%>
+<% User newUser = (User) request.getAttribute("newUser");%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>rideau</title>
+<title>Rideau | 会員登録完了</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -29,14 +29,32 @@
   </header>
   <main>
 <h1>登録完了しました</h1>
-
+<h2>登録情報</h2>
+  <table>
+    <tr>
+      <th>Email</th>
+      <td><%=newUser.getEmail() %></td>
+    </tr>
+    <tr>
+      <th>パスワード</th>
+      <td>非表示</td>
+    </tr>
+    <tr>
+      <th>氏名</th>
+      <td><%=newUser.getUser_nm() %></td>
+    </tr>
+    <tr>
+      <th>住所</th>
+      <td><%=newUser.getAddress() %></td>
+    </tr>
+  </table>
 <a href = "/rideau/Login">続けてログイン</a>
 </main>
 <footer>
 <div class="link">
 <ul>
   <li><a href="/rideau/CompanyInfo.jsp">企業概要</a></li>
-  <li><a href="">お問い合わせ</a></li>
+  <li><a href="/rideau/Contact">お問い合わせ</a></li>
  </ul>
 </div>
  <br>

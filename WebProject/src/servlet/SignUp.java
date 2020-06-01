@@ -31,6 +31,7 @@ public class SignUp extends HttpServlet {
 		String address = request.getParameter("address");
 		User user = new User(email,password,user_nm,address);
 		String errorMsg = "";
+		String errorMsg1 = "";
 
 		if(email.matches(".*@.*") == false) {
 			errorMsg = "Emailアドレスを正しく入力してください。" ;
@@ -41,18 +42,19 @@ public class SignUp extends HttpServlet {
 			request.setAttribute("errorMsg",errorMsg);
 		}
 		if(user_nm == null || user_nm =="") {
-			errorMsg =errorMsg + "氏名を入力してください。";
-			request.setAttribute("errorMsg",errorMsg);
+			errorMsg1 =errorMsg1 + "氏名を入力してください。";
+			request.setAttribute("errorMsg1",errorMsg1);
 		}
 		if(address==null || address=="" ) {
-			errorMsg = errorMsg + "住所を入力してください。";
-			request.setAttribute("errorMsg",errorMsg);
+			errorMsg1 = errorMsg1 + "住所を入力してください。";
+			request.setAttribute("errorMsg1",errorMsg1);
 		}
 
-		if(errorMsg == "" ) {
+		if(errorMsg == "" && errorMsg1 == "") {
 			//登録情報をデータベースに追加
 			SignUpLogic signUpLogic = new SignUpLogic();
 			signUpLogic.execute(user);
+			request.setAttribute("newUser",user);
 
 			//フォワード
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/signUpOK.jsp");

@@ -54,7 +54,7 @@ public class Login extends HttpServlet {
 			session.setAttribute("user",bo.findUser(login) );
 			session.removeAttribute("errorMsg");
 
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/loginOK.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/myPage.jsp");
 			dispatcher.forward(request, response);
 
 		}else {//ログイン失敗時

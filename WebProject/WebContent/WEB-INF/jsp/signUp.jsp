@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <% String errorMsg = (String)request.getAttribute("errorMsg");%>
+<% String errorMsg1 = (String)request.getAttribute("errorMsg1");%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>rideau</title>
+<title>Rideau | 会員登録</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -27,21 +28,29 @@
     </nav>
   </header>
    <main>
+    <h2>会員登録</h2>
+
 <form action = "/rideau/SignUp" method = "post" >
 Emailアドレス:<input type = "text" name = "email"><br>
 パスワード:<input type = "password" name = "password">(半角英数8文字以上)<br>
 氏名:<input type = "text" name = "user_nm"><br>
 住所:<input type = "text" name = "address"><br>
+
+<font color = "ff0000">
  <% if(errorMsg !=null){ %><%= errorMsg %><br><% } %>
+  <% if(errorMsg1 !=null){ %><%= errorMsg1 %><br><% } %>
+  </font>
+
 <input type = "submit" value = "登録" class="button">
 <a href = "/rideau/Login">戻る</a>
 </form>
 </main>
+
 <footer>
 <div class="link">
 <ul>
   <li><a href="/rideau/CompanyInfo.jsp">企業概要</a></li>
-  <li><a href="">お問い合わせ</a></li>
+  <li><a href="/rideau/Contact">お問い合わせ</a></li>
  </ul>
 </div>
  <br>

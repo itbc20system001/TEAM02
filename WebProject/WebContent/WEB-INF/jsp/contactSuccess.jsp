@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Rideau |　お問い合わせ送信完了</title>
+<title>Rideau | お問い合わせ送信完了</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>

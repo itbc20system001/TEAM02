@@ -5,10 +5,10 @@
 <%@ page import="model.OrderDesc"%>
 <%@ page import="java.util.List"%>
 <%
-	User loginUsr = (User) session.getAttribute("user");
-	List<OrderMain> orderMainList = (List<OrderMain>) request.getAttribute("orderMainList");
-	String errorMsg = (String) request.getAttribute("errorMsg");
-	List<Pattern> patternList = (List<Pattern>) request.getAttribute("patternList");
+  User loginUsr = (User) session.getAttribute("user");
+  List<OrderMain> orderMainList = (List<OrderMain>) request.getAttribute("orderMainList");
+  String errorMsg = (String) request.getAttribute("errorMsg");
+  List<Pattern> patternList = (List<Pattern>) request.getAttribute("patternList");
 %>
 <!DOCTYPE html>
 <html>
@@ -22,9 +22,9 @@
   <header>
 
     <!-- ロゴ -->
-    <h1 class="logo">
+    <div class="logo">
       <a href="/rideau"><img class="logo" src="images/1_Primary_logo_on_transparent_203x63.png" alt="logo"></a>
-    </h1>
+    </div>
 
     <!-- nav -->
     <nav class="nav">
@@ -38,10 +38,13 @@
   </header>
   <main>
   <h1>Rideau | マイページ</h1>
+  <div class="contents">
   <h2>お知らせ</h2>
   <p>現在はありません</p>
-
+  </div>
+  <div class="contents">
   <h2>お客様情報</h2>
+
   <table>
     <tr>
       <th>ユーザーID</th>
@@ -60,22 +63,22 @@
       <td><%=loginUsr.getAddress()%></td>
     </tr>
   </table>
+  </div>
   <a href="/rideau/MyPage?action=change">登録情報変更</a>
 
   <h2>注文履歴</h2>
 
   <%
-  	if (orderMainList == null) {
+    if (orderMainList == null) {
   %>
   <p>注文履歴はありません</p>
 
   <%
-  	} else if (orderMainList != null) {
+    } else if (orderMainList != null) {
   %>
+  <div class="contents">
   <h3>概要</h3>
-  <%
-  	for (OrderMain orderMain : orderMainList) {
-  %>
+  <% for (OrderMain orderMain : orderMainList) { %>
   <div class="pattern">
   <table class="items">
     <tr>
@@ -91,13 +94,14 @@
       <td><a href="/rideau/MyPage?action=detail&orderId=<%=orderMain.getOrder_id()%>">詳細へ</a></td>
     </tr>
     <%
-    	}
+      }
     %>
     <%
-    	}
+      }
     %>
 
   </table>
+  </div>
   <a href="/rideau/Logout">ログアウト</a> </div></main>
 
   <footer>

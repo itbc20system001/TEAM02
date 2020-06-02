@@ -26,6 +26,7 @@
     </nav>
   </header>
   <main>
+  <h1>お問い合わせ内容確認</h1>
 <form name="contact" action="/rideau/Contact" method="post">
 <table width="100%">
 <tbody>

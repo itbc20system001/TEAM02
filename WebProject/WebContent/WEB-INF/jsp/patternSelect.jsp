@@ -112,7 +112,7 @@ section {
 <div id="output"></div>
 <br>数量<br>
 <div class ="submitstyle">
-<input type="number" min="1" name="quantity" required>
+<input type="number" min="1" max="10" name="quantity" required>
 </div>
 <br>
 <div class="submitStyle">

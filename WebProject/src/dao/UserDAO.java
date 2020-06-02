@@ -230,5 +230,43 @@ public class UserDAO {
 	}
 
 
+	public boolean findBySameEmail(String email) {
+
+		//データベースへ接続
+		try {
+			Class.forName("org.mariadb.jdbc.Driver");
+		} catch (ClassNotFoundException e1) {
+			e1.printStackTrace();
+		}
+
+		try(Connection conn = DriverManager.getConnection(
+				JDBC_URL,DB_USER,DB_PASS)) {
+
+			//SELECT文の準備
+			String sql = "select email from user where email = ?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			pStmt.setString(1, email);
+
+			//SELECTを実行
+			ResultSet rs = pStmt.executeQuery();
+
+
+			//一致したユーザーが存在した場合
+			if(rs.next()) {
+				//trueを返す
+				return true;
+
+			}else {
+				return false;
+			}
+
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+
+	}
 
 }

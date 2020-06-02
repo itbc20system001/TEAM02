@@ -54,8 +54,7 @@ public class Login extends HttpServlet {
 			session.setAttribute("user",bo.findUser(login) );
 			session.removeAttribute("errorMsg");
 
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/myPage.jsp");
-			dispatcher.forward(request, response);
+			response.sendRedirect("/rideau/MyPage");
 
 		}else {//ログイン失敗時
 			request.setAttribute("errorMsg","ユーザーIDもしくはパスワードが間違っています。");

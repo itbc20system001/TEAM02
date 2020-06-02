@@ -32,7 +32,12 @@ public class SignUp extends HttpServlet {
 		User user = new User(email,password,user_nm,address);
 		String errorMsg = "";
 		String errorMsg1 = "";
+		SignUpLogic signUpLogic = new SignUpLogic();
 
+		if(signUpLogic.FindBySameName(email)) {
+			errorMsg = "既に登録済みのEmailアドレスです。" ;
+			request.setAttribute("errorMsg",errorMsg);
+		}
 		if(email.matches(".*.@..*") == false) {
 			errorMsg = "Emailアドレスを正しく入力してください。" ;
 			request.setAttribute("errorMsg",errorMsg);
@@ -52,7 +57,6 @@ public class SignUp extends HttpServlet {
 
 		if(errorMsg == "" && errorMsg1 == "") {
 			//登録情報をデータベースに追加
-			SignUpLogic signUpLogic = new SignUpLogic();
 			signUpLogic.execute(user);
 			request.setAttribute("newUser",user);
 

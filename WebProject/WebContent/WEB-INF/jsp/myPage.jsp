@@ -42,8 +42,8 @@
   <h2>お知らせ</h2>
   <p>現在はありません</p>
   </div>
-  <div class="contents">
   <h2>お客様情報</h2>
+  <div class="contents">
 
   <table>
     <tr>
@@ -102,8 +102,13 @@
 
   </table>
   </div>
-  <a href="/rideau/Logout">ログアウト</a> </div></main>
-
+</div>
+  <div class="submitStyle">
+  <form action="/rideau/Logout" method="get">
+<input type="submit" value="ログアウト" class="button-cancel">
+</form>
+</div>
+</main>
   <footer>
     <div class="link">
       <ul>

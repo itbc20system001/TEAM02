@@ -20,10 +20,10 @@
     <!-- nav -->
     <nav class="nav">
       <ul>
-        <li><a href="/rideau">ホーム</a></li>
-        <li><a href="/rideau/Shop">商品検索</a></li>
-        <li><a href="/rideau/Cart">カート</a></li>
-        <li><a href="/rideau/MyPage">マイページ</a></li>
+        <li><a href="/rideau">Top</a></li>
+        <li><a href="/rideau/Shop">Search</a></li>
+        <li><a href="/rideau/Cart">Cart</a></li>
+        <li><a href="/rideau/MyPage">Mypage</a></li>
       </ul>
     </nav>
   </header>
@@ -64,11 +64,15 @@
 <label>セキュリティコード</label>
 <input type = "tel" name="Security" pattern="\d{3}" size="3" maxlength="3" required><br>
 <label>名義(半角大文字)</label>
-<input type="text" pattern="^[A-Z\s]+$" required>
+<input type="text" pattern="^[A-Z\s]+$" required><br>
+<div class = "submitStyle">
 <input type="submit" value="完了（注文内容確認へ)" class="button">
+</div>
 </form>
 <form action ="/rideau/Cart">
+<div class ="submitStyle">
 <input type="submit" value="カートへ" class="button">
+</div>
 </form>
 
 </main>

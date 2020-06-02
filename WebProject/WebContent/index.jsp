@@ -42,17 +42,25 @@
   </div>
 
   <div class="contents">
-
-  <img src="images/shopping.jpg">
+<div class="flex_item">
+  <img src="images/shopping.jpg" class="photo">
+  <div class="item">
     <p>お買い物を始める</p>
-    <a class="btn" href="/rideau/Shop">おかいもの</a><br>
+    <p><a class="btn" href="/rideau/Shop">おかいもの</a></p>
+  </div>
+  </div>
   </div>
 
   <div class="contents">
-  <img src="images/login.jpg">
+  <div class="flex_item">
+
+  <img src="images/login.jpg" class="photo">
+  <div class="item">
    <p> ログイン/会員登録はこちら</p>
-    <a class="btn" href="/rideau/Login">ログイン</a><br>
-    <a class="btn" href="/rideau/SignUp">新規会員登録</a>
+    <p><a class="btn" href="/rideau/Login">ログイン</a></p>
+    <p><a class="btn" href="/rideau/SignUp">新規会員登録</a></p>
+  </div>
+  </div>
   </div>
 
 <div class=ranking>

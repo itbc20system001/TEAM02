@@ -33,7 +33,16 @@ public class CartServlet extends HttpServlet {
 
 			//    	List<Pattern> patternList = (List<Pattern>) session.getAttribute("patternList");
 
+
+
+			//
+//			String id = request.getParameter("orderId");
+
 			if(cartList !=null) {
+
+				getSizePriceLogic getSPL = new getSizePriceLogic();
+				List<SizePrice> sizePriceList = new ArrayList<SizePrice>();
+
 				GetPatternListLogic patternLogic = new GetPatternListLogic();
 				List<Pattern> patternList = new ArrayList<Pattern>();
 
@@ -41,7 +50,18 @@ public class CartServlet extends HttpServlet {
 					Pattern p = patternLogic.getPattern(cart.getPattern_cd());
 					patternList.add(p);
 
+					//
+					SizePrice sp = new SizePrice();
+					sp = getSPL.execute(cart.getSize_price_cd());
+					sizePriceList.add(sp);
+
+
 				}
+
+				//
+				request.setAttribute("sizePriceList", sizePriceList);
+//				request.setAttribute("orderDescList", orderDescList);
+
 				request.setAttribute("patternList", patternList);
 				//			request.setAttribute("cartList", cartList);
 
@@ -99,6 +119,9 @@ public class CartServlet extends HttpServlet {
 		//セッションスコープにリストを入れる
 		session.setAttribute("cartList", cartList);
 
+		getSizePriceLogic getSPL = new getSizePriceLogic();
+		List<SizePrice> sizePriceList = new ArrayList<SizePrice>();
+
 		GetPatternListLogic patternLogic = new GetPatternListLogic();
 		List<Pattern> patternList = new ArrayList<Pattern>();
 
@@ -106,8 +129,18 @@ public class CartServlet extends HttpServlet {
 			Pattern p = patternLogic.getPattern(cart.getPattern_cd());
 			patternList.add(p);
 
+
+			//
+			//
+			SizePrice spr = new SizePrice();
+			spr = getSPL.execute(cart.getSize_price_cd());
+			sizePriceList.add(spr);
+
 		}
 		request.setAttribute("patternList", patternList);
+		//
+		request.setAttribute("sizePriceList", sizePriceList);
+
 
 		User loginUsr = (User) session.getAttribute("user");
 

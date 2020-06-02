@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Rideau |　お支払い</title>
+<title>Rideau | お支払い</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -19,7 +20,7 @@
     <!-- nav -->
     <nav class="nav">
       <ul>
-        <li><a href="">ホーム</a></li>
+        <li><a href="/rideau">ホーム</a></li>
         <li><a href="/rideau/Shop">商品検索</a></li>
         <li><a href="/rideau/Cart">カート</a></li>
         <li><a href="/rideau/MyPage">マイページ</a></li>
@@ -29,8 +30,8 @@
   <main>
 <h1>クレジットカード情報入力</h1>
 <form action = "/rideau/Order" method = "post">
-<label>クレジットカード番号：</label>
-<input type = "text" name="creditCard" size="16" maxlength="16" required><br>
+<label>クレジットカード番号</label>
+<input type = "tel" name="creditCard" pattern="\d{16}" size="16" maxlength="16" required><br>
 <label>クレジットカード有効期限</label>
 <select name = "month" required>
 <option value="January">1</option>
@@ -61,12 +62,12 @@
 </select><br>
 
 <label>セキュリティコード</label>
-<input type = "tel" name="Security" size="3" maxlength="3" required><br>
-<label>名義</label>
-<input type="text" required>
+<input type = "tel" name="Security" pattern="\d{3}" size="3" maxlength="3" required><br>
+<label>名義(半角大文字)</label>
+<input type="text" pattern="^[A-Z\s]+$" required>
 <input type="submit" value="完了（注文内容確認へ)" class="button">
 </form>
-<form acction = "/rideau/Cart">
+<form action ="/rideau/Cart">
 <input type="submit" value="カートへ" class="button">
 </form>
 
@@ -75,14 +76,11 @@
 <div class="link">
 <ul>
   <li><a href="/rideau/CompanyInfo.jsp">企業概要</a></li>
-  <li><a href="">お問い合わせ</a></li>
+  <li><a href="/rideau/Contact">お問い合わせ</a></li>
  </ul>
 </div>
  <br>
   <p>&copy;Copyright Rideau All rights reserved.</p>
    </footer>
-
-
-
 </body>
 </html>

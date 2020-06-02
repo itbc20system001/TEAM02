@@ -95,7 +95,7 @@
 
     <tr>
       <th>価格</th>
-      <td><%=orderDesc.getPrice() + "円"%></td>
+      <td><%=orderDesc.getPrice() * orderDesc.getQuantity() + "円"%></td>
     </tr>
   </table>
   <%

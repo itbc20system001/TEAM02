@@ -47,7 +47,8 @@
 	<td>お問い合わせ内容</td>
 	<td><textarea name="contact"></textarea></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <div class = "submitStyle">
 <input  type="submit" value="確認画面へ" class="button">
 </div>

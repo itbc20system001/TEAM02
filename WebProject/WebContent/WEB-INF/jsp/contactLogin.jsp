@@ -32,7 +32,7 @@
 <tbody>
 <tr>
 	<td>お問い合わせ内容</td>
-	<td><textarea name="otoiawase"></textarea></td>
+	<td><textarea name="contact"></textarea></td>
 </tr>
 </tbody></table>
 <div class = "submitStyle">

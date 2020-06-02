@@ -12,7 +12,7 @@ body {
 
 /* main */
 main {
-	margin:3em auto;
+	margin:1.5em auto;
 	width: 65%;
 }
 
@@ -164,7 +164,7 @@ header {
 /* ロゴ */
 .logo{
 	text-align: center;
-	margin: 1.5em 0;
+	margin: 0.8em 0;
 }
 /* 見出し h1～ */
 h1 {
@@ -181,7 +181,7 @@ margin:  0;             /* デフォルトCSS打ち消し */
 
 h2 {
 	background-color: #f7f5f1;
-	margin-bottom: 0.5em;
+	margin: 0.5em 0;
 	padding-top: 0.5em;
 	padding-bottom: 0.5em;
 	padding-left: 10px;
@@ -350,9 +350,11 @@ td{
 
 /* colorSelect.jsp */
 .colors img {
+	padding:0.5em 0.7em;
 	height:200px;
 }
 
+/* pattern出力サイズ */
 .pattern img{
 	height:200px;
 }

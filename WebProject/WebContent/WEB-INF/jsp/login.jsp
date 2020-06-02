@@ -7,6 +7,11 @@
 <meta charset="UTF-8">
 <title>Rideau | ログイン</title>
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" />
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/5.10.1/css/font-awesome.min.css" />
+<script src="https://kit.fontawesome.com/58a698cbde,js" crossorigin="anonymous"></script>
 </head>
 <body>
 <header>
@@ -14,26 +19,39 @@
     <!-- ロゴ -->
     <div class="logo">
       <a href="/rideau"><img class="logo" src="images/1_Primary_logo_on_transparent_203x63.png" alt="logo"></a>
-    </div>>
+    </div>
 
     <!-- nav -->
     <nav class="nav">
       <ul>
-        <li><a href="/rideau">ホーム</a></li>
-        <li><a href="/rideau/Shop">商品検索</a></li>
-        <li><a href="/rideau/Cart">カート</a></li>
-        <li><a href="/rideau/MyPage">マイページ</a></li>
+        <li><a href="/rideau">Top</a></li>
+        <li><a href="/rideau/Shop">Search</a></li>
+        <li><a href="/rideau/Cart">Cart</a></li>
+        <li><a href="/rideau/MyPage">Mypage</a></li>
       </ul>
     </nav>
   </header>
    <main>
-    <h2>ログイン</h2>
+    <h1>ログイン</h1>
 <form action = "/rideau/Login" method = "post" >
-Emailアドレス:<input type = "text" name = "email"><br>
-パスワード:<input type = "password" name = "password"><br>
+Emailアドレス
+
+<div class="cp_iptxt">
+  <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
+  <input type="text" name = "email" placeholder="E-Mail">
+</div>
+
+パスワード
+<div class="cp_iptxt">
+  <i class="fas fa-key" aria-hidden="true"></i>
+  <input type="text" name = "password" placeholder="password">
+</div>
 <font color = "ff0000">
  <% if(errorMsg !=null){ %><%= errorMsg %><br><% } %>
  </font>
+
+
+
  <div class="submitStyle">
 <input type = "submit" value = "ログイン" class="button">
 </div>

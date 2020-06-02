@@ -43,7 +43,7 @@ public class ContactServlet extends HttpServlet {
 		// nullなら新しく作る
 		contactList = new ArrayList<Contact>();
 		}*/
-
+		request.setCharacterEncoding("UTF-8");
 String name = request.getParameter("ctc_name");
 String address = request.getParameter("ctc_address");
 String contact = request.getParameter("contact");

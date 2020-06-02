@@ -39,7 +39,7 @@
     </nav>
   </header>
   <main>
-  <h2>注文履歴</h2>
+  <h1>注文履歴</h1>
 
   <%
   	if (orderDescList == null) {
@@ -50,7 +50,7 @@
  	for (OrderDesc orderDesc : orderDescList) {
  %>
  <div class="contents">
-  <h3>詳細</h3>
+  <h2>詳細</h2>
   <table>
     <tr>
       <th>柄</th>

@@ -109,7 +109,6 @@
   <p>
     <a href="/rideau/MyPage">マイページへ戻る</a>
   </p>
-  </main>
 
   <footer>
     <div class="link">

@@ -32,7 +32,6 @@ header {
 	overflow: hidden;
 	margin-bottom: 10px;
 	background-color: #f8eed5;
-	transition    : .3s;
 }
 
 .nav ul {
@@ -48,6 +47,7 @@ header {
 }
 
 .nav li a {
+	transition    : .3s;
 	color: #382400;
 	display: block;
 	padding: 10px 0;
@@ -146,8 +146,20 @@ header {
 }
 
 .mainphoto img {
-	height: 600px;
+	width:100%;
 }
+
+.photo{
+	width:50%;
+}
+
+.flex_item{
+	display: flex;
+}
+.item{
+	margin-left: 4em;
+}
+
 /* ロゴ */
 .logo{
 	text-align: center;

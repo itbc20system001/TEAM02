@@ -35,7 +35,7 @@
   </header>
    <main>
     <h1>会員登録</h1>
-
+<div class="contents">
 <form action = "/rideau/SignUp" method = "post" >
 Emailアドレス
 <div class="cp_iptxt">
@@ -67,6 +67,7 @@ Emailアドレス
 </div>
 <a href = "/rideau/Login">戻る</a>
 </form>
+</div>
 </main>
 
 <footer>

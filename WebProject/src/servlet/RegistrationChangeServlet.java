@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.RegistrationChangeLogic;
+import model.SignUpLogic;
 import model.User;
 
 @WebServlet("/RegistrationChange")
@@ -29,6 +30,12 @@ public class RegistrationChangeServlet extends HttpServlet {
 		String address = request.getParameter("addressChange");
 		String errorMsg = "";
 
+		SignUpLogic signUpLogic = new SignUpLogic();
+
+		if(signUpLogic.FindBySameName(email)) {
+			errorMsg = "既に登録済みのEmailアドレスです。" ;
+			request.setAttribute("errorMsg",errorMsg);
+		}
 		if(email != ""  && email.matches(".*.@..*") == false) {
 			errorMsg = "変更後のEmailアドレスを正しく入力してください。" ;
 		}

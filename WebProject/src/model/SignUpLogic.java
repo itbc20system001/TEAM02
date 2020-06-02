@@ -8,4 +8,9 @@ public class SignUpLogic {
 		dao.create(user);
 	}
 
+	public boolean FindBySameName(String email) {
+		UserDAO dao = new UserDAO();
+		return dao.findBySameEmail(email);
+	}
+
 }

@@ -33,6 +33,7 @@
   </header>
    <main>
     <h1>ログイン</h1>
+    <div class="contents">
 <form action = "/rideau/Login" method = "post" >
 Emailアドレス
 
@@ -43,8 +44,8 @@ Emailアドレス
 
 パスワード
 <div class="cp_iptxt">
-  <i class="fas fa-key" aria-hidden="true"></i>
-  <input type="text" name = "password" placeholder="password">
+  <i class="fas fa-key fa-lg fa-fw" aria-hidden="true"></i>
+  <input type="password" name = "password" placeholder="password">
 </div>
 <font color = "ff0000">
  <% if(errorMsg !=null){ %><%= errorMsg %><br><% } %>
@@ -57,6 +58,7 @@ Emailアドレス
 </div>
 </form>
 <a href = "/rideau/SignUp">会員登録はこちら</a>
+</div>
 </main>
 <footer>
 <div class="link">

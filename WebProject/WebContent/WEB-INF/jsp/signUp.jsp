@@ -8,6 +8,12 @@
 <meta charset="UTF-8">
 <title>Rideau | 会員登録</title>
 <link rel="stylesheet" href="css/style.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" />
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/5.10.1/css/font-awesome.min.css" />
+<script src="https://kit.fontawesome.com/58a698cbde,js" crossorigin="anonymous"></script>
 </head>
 <body>
 <header>
@@ -31,10 +37,26 @@
     <h1>会員登録</h1>
 
 <form action = "/rideau/SignUp" method = "post" >
-Emailアドレス:<input type = "text" name = "email"><br>
-パスワード:<input type = "password" name = "password">(半角英数8文字以上)<br>
-氏名:<input type = "text" name = "user_nm"><br>
-住所:<input type = "text" name = "address"><br>
+Emailアドレス
+<div class="cp_iptxt">
+  <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
+  <input type="text" name = "email" placeholder="E-Mail">
+</div>
+パスワード(半角英数8文字以上)
+<div class="cp_iptxt">
+  <i class="fas fa-key" aria-hidden="true"></i>
+  <input type="text" name = "password" placeholder="password">
+</div>
+氏名
+<div class="cp_iptxt">
+  <i class="fas fa-user" aria-hidden="true"></i>
+  <input type="text" name = "user_nm" placeholder="user name">
+</div>
+住所
+<div class="cp_iptxt">
+  <i class="fas fa-home" aria-hidden="true"></i>
+  <input type="text" name = "address" placeholder="address">
+</div>
 
 <font color = "ff0000">
  <% if(errorMsg !=null){ %><%= errorMsg %><br><% } %>

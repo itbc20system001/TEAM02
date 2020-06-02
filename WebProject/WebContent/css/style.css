@@ -20,6 +20,10 @@ main {
 	max-width: 65%;
 }
 
+a{
+	color:
+}
+
 
 /* ナビゲーション（ヘッダーメニュー） */
 header {
@@ -185,7 +189,7 @@ margin:  0;             /* デフォルトCSS打ち消し */
 
 h2 {
 	background-color: #f7f5f1;
-	margin: 0.5em 0;
+	margin: 2em 0;
 	padding-top: 0.5em;
 	padding-bottom: 0.5em;
 	padding-left: 10px;

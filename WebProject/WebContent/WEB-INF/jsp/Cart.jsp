@@ -91,7 +91,7 @@ for(Cart c:cartList){ %>
 <th>削除</th>
 <td>
 <div class = "submitStyle">
-<input type ="checkbox" name="cancel" value="<%= i %>" required>
+<input type ="checkbox" name="cancel" value="<%= i %>" >
 </div>
 </td>
 </tr>

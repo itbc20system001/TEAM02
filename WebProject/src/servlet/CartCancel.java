@@ -38,22 +38,27 @@ public class CartCancel extends HttpServlet {
 		ArrayList<Cart> cartList = (ArrayList<Cart>) session.getAttribute("cartList");// セッションからリストを取得してくる
 
 		String[] cancel = request.getParameterValues("cancel");
+		if (cancel == null) {
+			response.sendRedirect("/rideau/Cart");
+		}else {
+			int i = 0;
+			Iterator<Cart> it = cartList.iterator();
+			while(it.hasNext()){
+				it.next();
+				for(String can : cancel) {
+					if(Integer.parseInt(can) == i) {
+						it.remove();
+					}
+				}
+				i++;
+			}
+			
+			
+			RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/CartCancel.jsp");
+			dis.forward(request, response);
+			
+		}
 
-		int i = 0;
-		Iterator<Cart> it = cartList.iterator();
-        while(it.hasNext()){
-            it.next();
-            for(String can : cancel) {
-            	if(Integer.parseInt(can) == i) {
-            		it.remove();
-            	}
-            }
-            i++;
-        }
-
-
-		RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/CartCancel.jsp");
-		dis.forward(request, response);
 
 	}
 

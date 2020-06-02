@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ page import = "model.Contact"%>
+    <%@ page import = "model.User"%>
     <% Contact ctc = (Contact) session.getAttribute("ctc"); %>
+    <% User user = (User) session.getAttribute("user");%>
 
 
 <!DOCTYPE html>
@@ -34,17 +36,27 @@
 <tbody>
 <tr>
 <th>お名前</th>
-<td><%=ctc.getName() %></td>
+<td><%if(ctc.getName() == null){ %>
+    <%= user.getUser_nm()%>
+    <%}else{ %>
+    <%= ctc.getName() %>
+    <%} %>
+</td>
+
 </tr>
 <tr>
 <th>メールアドレス</th>
-<td><%= ctc.getAddress()%></td>
+<td><%if(ctc.getAddress() == null){ %>
+    <%= user.getEmail()%>
+    <%}else{ %>
+    <%= ctc.getAddress() %>
+    <%} %></td>
 <tr>
 <th>お問い合わせ内容</th>
 <td><%= ctc.getContact()%></td>
 </tr></tbody>
 </table>
-<form action="/WEB-INF/jsp/contactSuccess.jsp">
+<form action="/rideau/contactSuccess.jsp">
 <div class = "submitStyle">
 <input type="submit" value="この内容で送信する" class="button">
 </div>

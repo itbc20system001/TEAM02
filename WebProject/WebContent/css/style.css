@@ -1,9 +1,13 @@
 @charset "UTF-8";
 
 /* 全体の設定 */
+html{
+	margin:
+}
+
 body {
 	width: 100%;
-	margin: 0 auto;
+	margin: 0 auto 0 auto;
 	font-size: 16px;
 	color: #382400;
 	line-height: 1.6;
@@ -13,7 +17,7 @@ body {
 /* main */
 main {
 	margin:1.5em auto;
-	width: 65%;
+	max-width: 65%;
 }
 
 
@@ -267,10 +271,10 @@ td{
 
 /* form */
 
-
+/* テキストボックス */
 .cp_iptxt {
 	position: relative;
-	width: 30em;
+	width: 20em;
 	margin-left:3em;
 	margin-top: 1em;
 	margin-bottom: 4em;
@@ -305,6 +309,16 @@ td{
 	border: 0;
 }
 
+.cp_iptxt input[type='tel'] {
+	font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0.3em;
+	padding-left: 40px;
+	letter-spacing: 1.5px;
+	border: 0;
+}
+
 .cp_iptxt input[type='text']:focus {
 	outline: none;
 }
@@ -317,6 +331,10 @@ td{
 	outline: none;
 }
 
+.cp_iptxt input[type='tel']:focus {
+	outline: none;
+}
+
 .cp_iptxt input[type='text']:focus::after {
 	outline: none;
 }
@@ -326,6 +344,10 @@ td{
 }
 
 .cp_iptxt input[type='email']:focus::after {
+	outline: none;
+}
+
+.cp_iptxt input[type='tel']:focus::after {
 	outline: none;
 }
 
@@ -347,6 +369,69 @@ td{
 	border-style: solid;
 	border-color: #4caf50;
 }
+
+/* select */
+.box{
+	  display: flex;
+
+
+
+}
+.cp_ipselect {
+	overflow: hidden;
+	width: 15%;
+	margin: 1em auto;
+}
+.cp_ipselect select {
+	width: 100%;
+	padding-right: 1em;
+	cursor: pointer;
+	text-indent: 0.01px;
+	text-overflow: ellipsis;
+	border: none;
+	outline: none;
+	background: transparent;
+	background-image: none;
+	box-shadow: none;
+	-webkit-appearance: none;
+	appearance: none;
+}
+.cp_ipselect select::-ms-expand {
+    display: none;
+}
+.cp_ipselect.cp_sl02 {
+	position: relative;
+	border: 1px solid #bbbbbb;
+	border-radius: 2px;
+	background: #ffffff;
+}
+.cp_ipselect.cp_sl02::before {
+	position: absolute;
+	top: 0.8em;
+	right: 0.9em;
+	width: 0;
+	height: 0;
+	padding: 0;
+	content: '';
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 6px solid #666666;
+	pointer-events: none;
+}
+.cp_ipselect.cp_sl02:after {
+	position: absolute;
+	top: 0;
+	right: 2.5em;
+	bottom: 0;
+	width: 1px;
+	content: '';
+	border-left: 1px solid #bbbbbb;
+}
+.cp_ipselect.cp_sl02 select {
+	padding: 8px 5px;
+	color: #666666;
+}
+
 
 /* colorSelect.jsp */
 .colors img {

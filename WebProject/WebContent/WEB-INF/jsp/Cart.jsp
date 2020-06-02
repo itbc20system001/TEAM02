@@ -38,7 +38,7 @@
   <main>
 <h1>カート</h1>
 <p>${user.getUser_nm() }さんのカート内の商品</p><br>
-<% if (cartList == null) { %>
+<% if (cartList == null || cartList.size() == 0) { %>
 <p>カートは空です</p>
 <%}else{ %>
 <form action = "/rideau/CartCancel" method = "post">

@@ -64,16 +64,16 @@ section {
     <!-- nav -->
     <nav class="nav">
       <ul>
-        <li><a href="/rideau">ホーム</a></li>
-        <li><a href="/rideau/Shop">商品検索</a></li>
-        <li><a href="/rideau/Cart">カート</a></li>
-        <li><a href="/rideau/MyPage">マイページ</a></li>
+        <li><a href="/rideau">Top</a></li>
+        <li><a href="/rideau/Shop">Search</a></li>
+        <li><a href="/rideau/Cart">Cart</a></li>
+        <li><a href="/rideau/MyPage">Mypage</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-  <h2>デザインを選んでください</h2>
+  <h1>デザインを選んでください</h1>
   <p><%=color%>のデザイン一覧
   </p>
 
@@ -111,7 +111,9 @@ section {
     <p>単価</p>
 <div id="output"></div>
 <br>数量<br>
+<div class ="submitstyle">
 <input type="number" min="1" name="quantity" required>
+</div>
 <br>
 <div class="submitStyle">
     <input type="submit" value="カートに入れる" class="button">

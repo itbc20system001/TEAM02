@@ -28,7 +28,9 @@
 <main>
 <h1>お問い合わせを受け付けました</h1>
 <form acction ="/rideau">
+<div class = "submitStyle">
 <input type="submit" value="トップへ" class="button">
+</div>
 </form>
 </main>
 <footer>

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Rideau |　カート削除</title>
+<title>Rideau | カート削除</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>

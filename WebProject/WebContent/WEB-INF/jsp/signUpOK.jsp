@@ -30,6 +30,7 @@
   <main>
 <h1>登録完了しました</h1>
 <h2>登録情報</h2>
+<div class="contents">
   <table>
     <tr>
       <th>Email</th>
@@ -48,7 +49,10 @@
       <td><%=newUser.getAddress() %></td>
     </tr>
   </table>
+  </div>
+  <div class="contents">
 <a href = "/rideau/Login">続けてログイン</a>
+</div>
 </main>
 <footer>
 <div class="link">

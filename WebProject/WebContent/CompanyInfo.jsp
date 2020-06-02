@@ -27,6 +27,7 @@
   </header>
   <main>
 <h2>会社概要</h2>
+<div class="contents">
 <table>
 <tr>
   <th>会社名</th>
@@ -69,7 +70,7 @@
   <td>インテリア関連商品の販売</td>
 </tr>
 </table>
-
+</div>
 <br>
 <br>
 

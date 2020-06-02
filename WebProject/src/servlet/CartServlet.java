@@ -24,31 +24,28 @@ import model.getSizePriceLogic;
 public class CartServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-
-    public CartServlet() {
-
-
-    }
-
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		User loginUsr = (User) session.getAttribute("user");
+		ArrayList<Cart> cartList = (ArrayList<Cart>) session.getAttribute("cartList");
 		if (loginUsr!=null) {
-	    	//リスト作成あ
-	    	ArrayList<Cart> cartList = (ArrayList<Cart>) session.getAttribute("cartList");
+			//リスト作成あ
 
-			GetPatternListLogic patternLogic = new GetPatternListLogic();
-			List<Pattern> patternList = new ArrayList<Pattern>();
+			//    	List<Pattern> patternList = (List<Pattern>) session.getAttribute("patternList");
 
-			for(Cart cart:cartList){
-				Pattern p = patternLogic.getPattern(cart.getPattern_cd());
-				patternList.add(p);
+			if(cartList !=null) {
+				GetPatternListLogic patternLogic = new GetPatternListLogic();
+				List<Pattern> patternList = new ArrayList<Pattern>();
+
+				for(Cart cart:cartList){
+					Pattern p = patternLogic.getPattern(cart.getPattern_cd());
+					patternList.add(p);
+
+				}
+				request.setAttribute("patternList", patternList);
+				//			request.setAttribute("cartList", cartList);
 
 			}
-			request.setAttribute("patternList", patternList);
-
-
 			RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/Cart.jsp");
 			dis.forward(request, response);
 		} else  {
@@ -58,18 +55,18 @@ public class CartServlet extends HttpServlet {
 
 
 	}
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 
-    	//セッションスコープから取得
-    	HttpSession session = request.getSession();
-    	//リスト作成
-    	ArrayList<Cart> cartList = (ArrayList<Cart>) session.getAttribute("cartList");
+		//セッションスコープから取得
+		HttpSession session = request.getSession();
+		//リスト作成
+		ArrayList<Cart> cartList = (ArrayList<Cart>) session.getAttribute("cartList");
 		if (cartList == null) {
 			// nullなら新しく作る
 			cartList = new ArrayList<Cart>();
 		}
-    	int hook = Integer.parseInt(request.getParameter("hook"));
+		int hook = Integer.parseInt(request.getParameter("hook"));
 		int cloth = Integer.parseInt(request.getParameter("cloth"));
 		int size = Integer.parseInt(request.getParameter("size"));
 		int quantity = Integer.parseInt(request.getParameter("quantity"));
@@ -83,23 +80,23 @@ public class CartServlet extends HttpServlet {
 
 		boolean hook_flg;
 		if(hook==0){
-		hook_flg=true;
+			hook_flg=true;
 		}else{
-		hook_flg=false;
+			hook_flg=false;
 		}
 
 		boolean cloth_flg;
 		if(cloth==0){
-		cloth_flg=true;
+			cloth_flg=true;
 		}else{
-		cloth_flg=false;
+			cloth_flg=false;
 		}
 
 
-        //コンストラクタに入れる
+		//コンストラクタに入れる
 		Cart c = new Cart(pattern, size, cloth_flg, hook_flg, quantity, price);
 		cartList.add(c);
-        //セッションスコープにリストを入れる
+		//セッションスコープにリストを入れる
 		session.setAttribute("cartList", cartList);
 
 		GetPatternListLogic patternLogic = new GetPatternListLogic();

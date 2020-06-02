@@ -20,7 +20,6 @@ main {
 /* ナビゲーション（ヘッダーメニュー） */
 header {
 	width: 100%;
-	height: 150px;
 }
 
 .nav {
@@ -74,6 +73,7 @@ header {
 	text-decoration: none;
 	color: #67c5ff;
 	transition    : .3s;         /* なめらか変化 */
+	margin: 2em 0;
 }
 
 .btn:before {
@@ -164,6 +164,7 @@ header {
 /* ロゴ */
 .logo{
 	text-align: center;
+	margin: 1.5em 0;
 }
 /* 見出し h1～ */
 h1 {
@@ -185,7 +186,7 @@ h2 {
 	padding-bottom: 0.5em;
 	padding-left: 10px;
 	font-size: 18px;
-	border-left: 5px solid #e78f00;
+	border-left: 5px solid #679238;
 }
 
 /* news */
@@ -251,12 +252,18 @@ th,td{
 border: 3px #e9c5a0 solid;
 	padding: 1em 4em;
 
+
+
 }
 th{
+	width: 10em;
 	background-color: #f8eed5;
 	text-align: center;
 }
 
+td{
+	width:200px;
+}
 
 /* form */
 
@@ -264,6 +271,7 @@ th{
 .cp_iptxt {
 	position: relative;
 	width: 30em;
+	margin-left:3em;
 	margin-top: 1em;
 	margin-bottom: 4em;
 }
@@ -276,12 +284,51 @@ th{
 	letter-spacing: 1px;
 	border: 0;
 }
+
+.cp_iptxt input[type='password'] {
+	font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0.3em;
+	padding-left: 40px;
+	letter-spacing: 1px;
+	border: 0;
+}
+
+.cp_iptxt input[type='email'] {
+	font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0.3em;
+	padding-left: 40px;
+	letter-spacing: 1px;
+	border: 0;
+}
+
 .cp_iptxt input[type='text']:focus {
 	outline: none;
 }
+
+.cp_iptxt input[type='email']:focus {
+	outline: none;
+}
+
+.cp_iptxt input[type='password']:focus {
+	outline: none;
+}
+
 .cp_iptxt input[type='text']:focus::after {
 	outline: none;
 }
+
+.cp_iptxt input[type='password']:focus::after {
+	outline: none;
+}
+
+.cp_iptxt input[type='email']:focus::after {
+	outline: none;
+}
+
 .cp_iptxt i {
 	position: absolute;
 	top: 0;

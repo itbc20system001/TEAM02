@@ -1,3 +1,4 @@
+<%@page import="model.SizePrice"%>
 <%@page import="model.Pattern"%>
 <%@page import="java.util.List"%>
 <%@page import="model.Cart"%>
@@ -8,6 +9,8 @@
     <%
     List<Cart> cartList= (List<Cart>) session.getAttribute("cartList");
     List<Pattern> patternList= (List<Pattern>) request.getAttribute("patternList");
+    //
+    List<SizePrice> sizePriceList = (List<SizePrice>) request.getAttribute("sizePriceList");
     %>
 
 <!DOCTYPE html>
@@ -56,11 +59,13 @@ for(Cart c:cartList){ %>
 </tr>
 <tr>
 <th>サイズ縦</th>
-<td><%=c.getSize_price_cd() %></td>
+<td>丈<%=sizePriceList.get(i).getHeight() + "cm"%></td>
+<!--  <td><%=c.getSize_price_cd() %></td>  -->
 </tr>
 <tr>
 <th>サイズ横</th>
-<td><%=c.getSize_price_cd() %></td>
+<td>幅<%=sizePriceList.get(i).getWidth() + "cm"%></td>
+<!-- <td><%=c.getSize_price_cd() %></td>  -->
 </tr>
 <tr>
 <th>裏地の有無</th>

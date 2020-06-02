@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -37,11 +38,11 @@ public class ContactServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
-//		ArrayList<Contact> contactList = (ArrayList<Contact>) session.getAttribute("contactList");
-//		if (contactList == null) {
-//			// nullなら新しく作る
-//			contactList = new ArrayList<Contact>();
-//		}
+		ArrayList<Contact> contactList = (ArrayList<Contact>) session.getAttribute("contactList");
+	/*if (contactList == null) {
+		// nullなら新しく作る
+		contactList = new ArrayList<Contact>();
+		}*/
 
 String name = request.getParameter("ctc_name");
 String address = request.getParameter("ctc_address");
@@ -54,9 +55,9 @@ session.setAttribute("contact",contact);
 
 Contact ctc = new Contact(name, address, contact);
 session.setAttribute("ctc", ctc);
-//contactList.add(ctc);
-//
-//session.setAttribute("contactList", contactList);
+/*contactList.add(ctc);
+
+session.setAttribute("contactList", contactList);*/
 
 RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/check_contact.jsp");
 dis.forward(request, response);

@@ -35,10 +35,10 @@
     <!-- nav -->
     <nav class="nav">
       <ul>
-        <li><a href="/rideau">ホーム</a></li>
-        <li><a href="/rideau/Shop">商品検索</a></li>
-        <li><a href="/rideau/Cart">カート</a></li>
-        <li><a href="/rideau/MyPage">マイページ</a></li>
+        <li><a href="/rideau">Home</a></li>
+        <li><a href="/rideau/Shop">Search</a></li>
+        <li><a href="/rideau/Cart">Cart</a></li>
+        <li><a href="/rideau/MyPage">Mypage</a></li>
       </ul>
     </nav>
   </header>
@@ -52,7 +52,7 @@
   <br>
   <br>
   <div class="contents">
-    <h1>商品詳細</h1>
+    <h2>商品詳細</h2>
     <%
   	int i = 0;
   	for (Cart cart : cartList) {
@@ -160,7 +160,9 @@
 </div>
 
   <form action="/rideau/OrderConfirmation" method="post">
+  <div class="submitStyle">
     <input type="submit" value="注文確定" class="button">
+    </div>
   </form>
 
   <a href="/rideau/Creditcard>クレジットカード情報入力に戻る"></a> <br>

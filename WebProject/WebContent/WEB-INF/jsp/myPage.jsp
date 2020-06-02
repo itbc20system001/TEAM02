@@ -37,7 +37,7 @@
     </nav>
   </header>
   <main>
-  <h1>Rideau | マイページ</h1>
+  <h1>マイページ</h1>
   <div class="contents">
   <h2>お知らせ</h2>
   <p>現在はありません</p>

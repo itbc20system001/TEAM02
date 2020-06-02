@@ -74,6 +74,7 @@ section {
 
   <main>
   <h1>デザインを選んでください</h1>
+  <div class="contents">
   <p><%=color%>のデザイン一覧
   </p>
 
@@ -87,7 +88,7 @@ section {
       <%} %>
       </div>
     </div>
-
+    <div class="contents">
     サイズを選んでください<br> <select name="size" id="Select1" onchange="selectboxChange();" required>
       <option value="" disabled selected >選択してください</option>
       <option value="1">幅100×丈110</option>
@@ -97,7 +98,10 @@ section {
       <option value="5">幅100×丈200</option>
       <option value="6">幅150×丈178</option>
       <option value="7">幅150×丈200</option>
-    </select><br> オプション<br>
+    </select><br>
+    </div>
+    <div class="contents">
+    オプション<br>
     <table>
       <tr>
         <th>裏地</th>
@@ -105,20 +109,24 @@ section {
       </tr>
       <tr>
         <th>タイプ</th>
-        <td><input type="radio" name="hook" value="0" required>レールが隠れる<input type="radio" name="hook" value="1" required>レールが隠れない</td>
+        <td><input type="radio" name="hook" value="0" required>レールが隠れる<br><input type="radio" name="hook" value="1" required>レールが隠れない</td>
       </tr>
     </table>
+    </div>
+    <div class="contents">
     <p>単価</p>
 <div id="output"></div>
 <br>数量<br>
 <div class ="submitstyle">
 <input type="number" min="1" max="10" name="quantity" required>
 </div>
+</div>
 <br>
 <div class="submitStyle">
     <input type="submit" value="カートに入れる" class="button">
     </div>
   </form>
+</div>
 
   </main>
 

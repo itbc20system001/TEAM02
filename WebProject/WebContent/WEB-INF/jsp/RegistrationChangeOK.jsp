@@ -29,7 +29,15 @@
   </header>
    <main>
 <h1>登録内容変更しました</h1>
-<a href = "/rideau/MyPage">マイページへ</a>
+
+<div class="contents">
+<form action ="/rideau/MyPage">
+<div class ="submitStyle">
+<input type="submit" value="マイページへ" class="button">
+</div>
+</form>
+</div>
+
 </main>
 <footer>
 <div class="link">

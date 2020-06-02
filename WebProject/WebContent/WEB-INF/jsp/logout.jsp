@@ -28,7 +28,7 @@
   <main>
 <p>ログアウトしました</p>
 
-<a href = "/rideau">トップへ</a>
+<a href = "/rideau">トップへ</a><br>
 <a href = "/rideau/Login">他のアカウントでログイン</a>
 </main>
 <footer>

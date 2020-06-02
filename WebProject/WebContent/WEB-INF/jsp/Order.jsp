@@ -51,8 +51,8 @@
   <br>
   <br>
   <br>
-  <div class="contents">
     <h2>商品詳細</h2>
+  <div class="contents">
     <%
   	int i = 0;
   	for (Cart cart : cartList) {
@@ -123,8 +123,8 @@
   </table>
 
 
-  <div class="contents">
     <h1>お届け情報</h1>
+  <div class="contents">
     <table>
       <tbody>
         <tr>
@@ -143,8 +143,8 @@
   </div>
 
 
-<div class="contents">
   <h1>ご請求情報</h1>
+<div class="contents">
   <table>
     <tbody>
       <tr>

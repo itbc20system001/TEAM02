@@ -20,15 +20,15 @@
     <!-- nav -->
     <nav class="nav">
       <ul>
-        <li><a href="/rideau">ホーム</a></li>
-        <li><a href="/rideau/Shop">商品検索</a></li>
-        <li><a href="/rideau/Cart">カート</a></li>
-        <li><a href="/rideau/MyPage">マイページ</a></li>
+        <li><a href="/rideau">Top</a></li>
+        <li><a href="/rideau/Shop">Search</a></li>
+        <li><a href="/rideau/Cart">Cart</a></li>
+        <li><a href="/rideau/MyPage">Mypage</a></li>
       </ul>
     </nav>
   </header>
    <main>
-    <h2>会員登録</h2>
+    <h1>会員登録</h1>
 
 <form action = "/rideau/SignUp" method = "post" >
 Emailアドレス:<input type = "text" name = "email"><br>

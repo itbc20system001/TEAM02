@@ -90,7 +90,7 @@
 
     <tr>
       <th>個数</th>
-      <td><%=orderDesc.getQuantity() + "個"%></td>
+      <td><%=orderDesc.getQuantity() + "点"%></td>
     </tr>
 
     <tr>

@@ -32,7 +32,7 @@
 <table width="100%">
 <tbody><tr>
 	<th>お名前</th>
-	<td><input name="ctc_name" type="text" required></td>
+	<td><input name="ctc_name" type="text" required autocomplete="off"></td>
 </tr>
 <%-- <tr>
 	<td>フリガナ</td>
@@ -41,12 +41,12 @@
 --%>
 <tr>
 	<th>メールアドレス</th>
-	<td><input name="ctc_address" type="email" required></td>
+	<td><input name="ctc_address" type="email" required autocomplete="off"></td>
 </tr>
 
 <tr>
 	<th>お問い合わせ内容</th>
-	<td><textarea name="contact" required></textarea></td>
+	<td><textarea name="contact" required autocomplete="off"></textarea></td>
 </tr>
 </tbody>
 </table>

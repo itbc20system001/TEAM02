@@ -40,7 +40,7 @@
 
 <div class="cp_iptxt">
   <i class="far fa-credit-card fa-lg fa-fw" aria-hidden="true"></i>
-  <input type="tel" name = "creditCard" pattern="\d{16}" size="16" maxlength="16" required placeholder="CreditCard">
+  <input type="tel" name = "creditCard" pattern="\d{16}" size="16" maxlength="16" required placeholder="CreditCard" autocomplete="off">
 </div>
 
 <label>クレジットカード有効期限</label>
@@ -83,14 +83,14 @@
 
 <div class="cp_iptxt">
   <i class="fas fa-key fa-lg fa-fw" aria-hidden="true"></i>
-  <input type="tel" name = "Security" pattern="\d{3}" size="3" maxlength="3" required >
+  <input type="tel" name = "Security" pattern="\d{3}" size="3" maxlength="3" required autocomplete="off">
 </div>
 
 <label>名義(半角大文字)</label>
 
 <div class="cp_iptxt">
   <i class="fas fa-user fa-lg fa-fw" aria-hidden="true"></i>
-  <input type="text" pattern="^[A-Z\s]+$" required placeholder="Name">
+  <input type="text" pattern="^[A-Z\s]+$" required placeholder="Name" autocomplete="off">
 </div>
 
 <div class = "submitStyle">

@@ -18,10 +18,10 @@
     <!-- nav -->
     <nav class="nav">
       <ul>
-        <li><a href="/rideau">ホーム</a></li>
-        <li><a href="/rideau/Shop">商品検索</a></li>
-        <li><a href="/rideau/Cart">カート</a></li>
-        <li><a href="/rideau/MyPage">マイページ</a></li>
+       <li><a href="/rideau">Top</a></li>
+        <li><a href="/rideau/Shop">Search</a></li>
+        <li><a href="/rideau/Cart">Cart</a></li>
+        <li><a href="/rideau/MyPage">Mypage</a></li>
       </ul>
     </nav>
   </header>
@@ -63,7 +63,7 @@
 </tr>
 <tr>
   <th>代表者</th>
-  <td>代表取締役社長 切通敦也</td>
+  <td>代表取締役社長 小田切かなた</td>
 </tr>
 <tr>
   <th>事業内容</th>

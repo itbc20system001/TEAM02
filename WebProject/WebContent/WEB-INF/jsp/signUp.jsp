@@ -40,22 +40,22 @@
 Emailアドレス
 <div class="cp_iptxt">
   <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
-  <input type="email" name = "email" placeholder="E-Mail">
+  <input type="email" name = "email" placeholder="E-Mail" autocomplete="off">
 </div>
 パスワード(半角英数8文字以上)
 <div class="cp_iptxt">
   <i class="fas fa-key fa-lg fa-fw" aria-hidden="true"></i>
-  <input type="password" name = "password" placeholder="password">
+  <input type="password" name = "password" placeholder="password" autocomplete="off">
 </div>
 氏名
 <div class="cp_iptxt">
   <i class="fas fa-user fa-lg fa-fw" aria-hidden="true"></i>
-  <input type="text" name = "user_nm" placeholder="user name">
+  <input type="text" name = "user_nm" placeholder="user name" autocomplete="off">
 </div>
 住所
 <div class="cp_iptxt">
   <i class="fas fa-home fa-lg fa-fw" aria-hidden="true"></i>
-  <input type="text" name = "address" placeholder="address">
+  <input type="text" name = "address" placeholder="address" autocomplete="off">
 </div>
 
 <font color = "ff0000">

@@ -32,7 +32,7 @@ User loginUsr = (User) session.getAttribute("user");%>
 <h1>登録情報変更</h1>
  <h2>お客様情報</h2>
  <div class="contents">
-<form action = "/rideau/RegistrationChange" method = "post" >
+<form action = "/rideau/RegistrationChange" method = "post" autocomplete="off" >
   <table>
   <tr>
       <th></th>

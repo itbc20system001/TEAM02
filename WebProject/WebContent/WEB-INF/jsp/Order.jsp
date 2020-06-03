@@ -44,13 +44,8 @@
   </header>
 
   <main>
-  <div class="contents">
     <h1>ご注文内容確認</h1>
-  </div>
-  <br>
-  <br>
-  <br>
-  <br>
+
     <h2>商品詳細</h2>
   <div class="contents">
     <%

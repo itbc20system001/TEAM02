@@ -27,10 +27,11 @@
   </header>
 <main>
 <h1>お問い合わせ</h1>
+<div class="contents">
 <form name="contact" action="/rideau/Contact" method="post">
 <table width="100%">
 <tbody><tr>
-	<td>お名前</td>
+	<th>お名前</th>
 	<td><input name="ctc_name" type="text" required></td>
 </tr>
 <%-- <tr>
@@ -39,12 +40,12 @@
 </tr>
 --%>
 <tr>
-	<td>メールアドレス</td>
+	<th>メールアドレス</th>
 	<td><input name="ctc_address" type="email" required></td>
 </tr>
 
 <tr>
-	<td>お問い合わせ内容</td>
+	<th>お問い合わせ内容</th>
 	<td><textarea name="contact" required></textarea></td>
 </tr>
 </tbody>
@@ -53,6 +54,7 @@
 <input  type="submit" value="確認画面へ" class="button">
 </div>
 </form>
+</div>
 </main>
 
   <footer>

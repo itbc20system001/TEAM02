@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<div class="wrapper">
 <header>
 
     <!-- ロゴ -->
@@ -49,5 +50,6 @@
  <br>
   <p>&copy;Copyright Rideau All rights reserved.</p>
    </footer>
+</div>
 </body>
 </html>

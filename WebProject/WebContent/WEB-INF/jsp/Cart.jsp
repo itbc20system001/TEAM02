@@ -104,11 +104,14 @@ for(Cart c:cartList){ %>
 
 </table>--%>
 <%-- acctionタグつける --%>
-
+<div class="submitStyle">
 <input type = "submit" value = "カートの商品削除" class="button-cancel">
+</div>
 </form>
 <form action="/rideau/Creditcard" method="get">
+<div class="submitStyle">
 <input type="submit" value="お支払いへ（クレジットカード情報入力）" class="button">
+</div>
 </form>
 <%} %>
 

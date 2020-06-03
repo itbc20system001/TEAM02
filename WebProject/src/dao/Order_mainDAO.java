@@ -123,6 +123,8 @@ public class Order_mainDAO implements DBConfig {
 				orderMainList.add(orderMainResult);
 
 			}
+			rs.close();
+            pStmt.close(); // Close Statement
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return null;

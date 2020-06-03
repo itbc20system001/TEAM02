@@ -119,6 +119,8 @@ public class OrderDescDAO implements DBConfig{
                     orderDescList.add(orderDescResult);
 
                 }
+                rs.close();
+                pStmt.close(); // Close Statement
             }catch(SQLException e){
                 e.printStackTrace();
                 return null;

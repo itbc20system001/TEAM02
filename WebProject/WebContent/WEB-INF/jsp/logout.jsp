@@ -13,7 +13,7 @@
     <!-- ロゴ -->
     <div class="logo">
       <a href="/rideau"><img class="logo" src="images/1_Primary_logo_on_transparent_203x63.png" alt="logo"></a>
-    </div>>
+    </div>
 
     <!-- nav -->
     <nav class="nav">

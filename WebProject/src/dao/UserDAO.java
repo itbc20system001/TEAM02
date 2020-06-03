@@ -15,6 +15,7 @@ public class UserDAO {
 	private final String JDBC_URL="jdbc:mariadb://localhost/rideau";
 	private final String DB_USER = "root";
 	private final String DB_PASS = "insource.2015it";
+	Connection conn = null;
 
 	public User findByLogin(LoginModel login) {
 		User user = null;
@@ -26,8 +27,8 @@ public class UserDAO {
 			e1.printStackTrace();
 		}
 
-		try(Connection conn = DriverManager.getConnection(
-				JDBC_URL,DB_USER,DB_PASS)) {
+		try {
+			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
 
 			//SELECT文の準備
 			String sql = "select * from user where email = ? AND password = ?";
@@ -60,6 +61,17 @@ public class UserDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return null;
+		}finally {
+			if (conn != null) {
+				try {
+					conn.close();
+
+				} catch (SQLException e) {
+					e.printStackTrace();
+					return user;
+				}
+			}
+
 		}
 		//見つかったユーザーまたはnullを返す
 		return user;

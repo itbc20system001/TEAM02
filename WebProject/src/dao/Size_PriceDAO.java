@@ -48,6 +48,17 @@ public class Size_PriceDAO implements DBConfig {
 		} catch (SQLException e) {
 			e.getStackTrace();
 			return null;
+		}finally {
+			if (conn != null) {
+				try {
+					conn.close();
+
+				} catch (SQLException e) {
+					e.printStackTrace();
+					return s;
+				}
+			}
+
 		}
 		return s;
 	}

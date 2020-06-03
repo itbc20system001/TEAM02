@@ -121,7 +121,7 @@ section {
 <div id="output" class="price"></div>
 <br>数量<br>
 <div class ="submitstyle">
-<input type="number" min="1" max="10" name="quantity" required>
+<input type="number" min="1" max="10" name="quantity" required autocomplete="off">
 </div>
 </div>
 <br>

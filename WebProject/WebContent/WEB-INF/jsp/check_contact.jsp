@@ -32,6 +32,8 @@
     </nav>
   </header>
   <main>
+ <h1>お問い合わせ内容確認</h1>
+ <div class = "contents">
 <table>
 <tbody>
 <tr>
@@ -56,6 +58,7 @@
 <td><%= ctc.getContact()%></td>
 </tr></tbody>
 </table>
+</div>
 <form action="/rideau/contactSuccess.jsp">
 <div class = "submitStyle">
 <input type="submit" value="この内容で送信する" class="button">

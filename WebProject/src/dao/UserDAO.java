@@ -53,6 +53,9 @@ public class UserDAO {
 				user = new User( Integer.parseInt(user_id), email, password ,user_nm,address);
 			}
 
+			rs.close();
+            pStmt.close(); // Close Statement
+
 
 		} catch (SQLException e) {
 			e.printStackTrace();

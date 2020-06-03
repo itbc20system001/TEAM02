@@ -42,6 +42,9 @@ public class Size_PriceDAO implements DBConfig {
 				s.setPrice(rs.getInt("price"));
 			}
 
+			rs.close();
+			pSmt.close(); // Close Statement
+
 		} catch (SQLException e) {
 			e.getStackTrace();
 			return null;

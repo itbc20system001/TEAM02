@@ -57,6 +57,9 @@ public class PatternDAO {
 				pattern_imgList.add(p);
 			}
 
+			rs.close();
+            pStmt.close(); // Close Statement
+
 		} catch (Exception e) {
 			e.getStackTrace();
 			return null;
@@ -94,6 +97,9 @@ public class PatternDAO {
 				String pattern_img = rs.getString("pattern_img");
 				p = new Pattern(cd, pattern_nm, pattern_detail, pattern_img);
 			}
+
+			rs.close();
+            pStmt.close(); // Close Statement
 
 		} catch (Exception e) {
 			e.getStackTrace();

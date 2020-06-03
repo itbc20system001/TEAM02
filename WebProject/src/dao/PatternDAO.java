@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +26,7 @@ public class PatternDAO {
 
 	//　指定色のデータを探す
 	public List<Pattern> findPattern(String color) {
+		Connection conn = null;
 		//　かえす文字列を入れるArrayList
 		List<Pattern> pattern_imgList = new ArrayList<>();
 
@@ -35,8 +37,8 @@ public class PatternDAO {
 			e1.printStackTrace();
 		}
 
-		try (Connection conn = DriverManager.getConnection(
-				JDBC_URL, DB_USER, DB_PASS)) {
+		try  {
+			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
 
 			//SELECT文の準備
 			String sql = "select * from pattern where pattern_detail = ?";
@@ -64,11 +66,24 @@ public class PatternDAO {
 			e.getStackTrace();
 			return null;
 		}
+		finally {
+            if(conn !=null) {
+                try {
+                    conn.close();
+
+                }catch(SQLException e) {
+                    e.printStackTrace();
+                    return pattern_imgList;
+                }
+            }
+
+
+        }
 		return pattern_imgList;
 	}
 
 	public Pattern findPettern_Bycd(int pattern_cd) {
-
+		Connection conn = null;
 		Pattern p = new Pattern();
 		//　データベースへ接続
 		try {
@@ -77,8 +92,8 @@ public class PatternDAO {
 			e1.printStackTrace();
 		}
 
-		try (Connection conn = DriverManager.getConnection(
-				JDBC_URL, DB_USER, DB_PASS)) {
+		try  {
+			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
 
 			//SELECT文の準備
 			String sql = "select * from pattern where pattern_cd = ?";
@@ -104,6 +119,18 @@ public class PatternDAO {
 		} catch (Exception e) {
 			e.getStackTrace();
 			return null;
+		}
+		finally {
+			if (conn != null) {
+				try {
+					conn.close();
+
+				} catch (SQLException e) {
+					e.printStackTrace();
+					return p;
+				}
+			}
+
 		}
 		return p;
 	}

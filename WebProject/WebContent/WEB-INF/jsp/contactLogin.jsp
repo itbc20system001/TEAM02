@@ -31,7 +31,7 @@
 <table width="100%">
 <tbody>
 <tr>
-	<td>お問い合わせ内容</td>
+	<th>お問い合わせ内容</th>
 	<td><textarea name="contact"></textarea></td>
 </tr>
 </tbody></table>

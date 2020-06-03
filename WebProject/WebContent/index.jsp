@@ -31,7 +31,6 @@
   </header>
 
   <main>
-<p>セミオーダーカーテン通販サイト「Rideau」</p>
   <div class="mainphoto">
   <img alt="mainphoto" src="images/3180330_m.jpg">
   </div>
@@ -66,7 +65,9 @@
 <div class=ranking>
 <h2>人気のデザイン</h2>
 <div class="pattern">
-<img alt="" src="images/pattern/b01.jpg">
+<a href="/rideau/Shop?color=blue"><img alt="" src="images/pattern/b01.jpg"></a>
+<a href="/rideau/Shop?color=green"><img alt="" src="images/pattern/g02.jpg"></a>
+<a href="/rideau/Shop?color=white"><img alt="" src="images/pattern/w02.jpg"></a>
 </div>
 </div>
   </main>

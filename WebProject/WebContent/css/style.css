@@ -1,17 +1,23 @@
 @charset "UTF-8";
 
 /* 全体の設定 */
-html{
-	margin:
+*{
+	margin:0;
+	padding: 0;
 }
 
+html{
+	height: 100%;
+}
 body {
+	position: relative;
+	min-height: 100%;
 	width: 100%;
 	margin: 0 auto 0 auto;
 	font-size: 16px;
 	color: #382400;
 	line-height: 1.6;
-	position: relative;
+	padding-bottom: 7.5em;
 }
 
 /* main */
@@ -21,7 +27,11 @@ main {
 }
 
 a{
-	color:
+	color:#e78f00;
+}
+a:hover{
+	cursor: pointer;
+	color: #ffc86a;
 }
 
 
@@ -79,7 +89,7 @@ header {
 	font-weight: bold;
 	padding: 0.25em 0;
 	text-decoration: none;
-	color: #67c5ff;
+	color: #4caf50;
 	transition    : .3s;         /* なめらか変化 */
 	margin: 2em 0;
 }
@@ -92,10 +102,12 @@ header {
 	top: 100%;
 	left: 0;
 	border-radius: 3px;
-	background: #67c5ff;
+	background: #4caf50;
 	transition: .2s;
 }
-
+.btn:hover{
+	color: #4caf50;
+}
 .btn:hover:before {
   top: -webkit-calc(100% - 3px);
   top: calc(100% - 3px);
@@ -214,9 +226,13 @@ h2 {
 
 /* footer */
 footer {
-	clear:both;
+
+	width:100%;
 	background-color: #945b23;
 	text-align: center;
+	height:7.5em;
+	position: absolute;
+	bottom: 0;
 }
 .link{
 	width: 100%;
@@ -253,6 +269,7 @@ footer li a:hover {
 /* 表のデザイン */
 table{
 border-collapse: collapse;
+margin-left:3em;
 margin-bottom: 2em;
 }
 
@@ -274,8 +291,26 @@ td{
 }
 
 /* form */
+/* 問い合わせ */
+input[name="ctc_name"],input[name="ctc_address"]{
+	width:30em;
+}
 
+textarea{
+	resize:none;
+	width:30em;
+	height:6em;
+}
 /* テキストボックス */
+input[type="number"]{
+	margin-top:0.5em;
+	margin-left:3em;
+	height:2em;
+	width:5em;
+	font-size:1.2em;
+}
+
+
 .cp_iptxt {
 	position: relative;
 	width: 20em;
@@ -383,8 +418,8 @@ td{
 }
 .cp_ipselect {
 	overflow: hidden;
-	width: 15%;
-	margin: 1em auto;
+	width: 19%;
+	margin: 1em 3em;
 }
 .cp_ipselect select {
 	width: 100%;
@@ -446,5 +481,10 @@ td{
 /* pattern出力サイズ */
 .pattern img{
 	height:200px;
+	margin: 0 1em;
 }
 
+.price{
+	margin-left: 3em;
+	font-size: 1.2em;
+}

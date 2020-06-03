@@ -37,10 +37,7 @@ public class Shop extends HttpServlet {
 			//　金額を出せるようにする
 			getSizePriceLogic sizePriceLogic = new getSizePriceLogic();
 			List<SizePrice> sizePriceList = new ArrayList<SizePrice>();
-			for (int i = 1; i <= 7; i++) {
-				SizePrice sp = sizePriceLogic.execute(i);
-				sizePriceList.add(sp);
-			}
+			sizePriceList=sizePriceLogic.find_all();
 
 
 			request.setAttribute("patternList", patternList);

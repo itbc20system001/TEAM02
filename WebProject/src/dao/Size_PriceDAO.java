@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import model.SizePrice;
 
@@ -61,5 +63,53 @@ public class Size_PriceDAO implements DBConfig {
 
 		}
 		return s;
+	}
+
+
+	public List<SizePrice> findAll() {
+		Connection conn = null;
+		List<SizePrice> size_priceList=new ArrayList<SizePrice>();
+		try {
+			Class.forName("org.mariadb.jdbc.Driver");
+		} catch (ClassNotFoundException e1) {
+			e1.printStackTrace();
+		}
+		try {
+			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
+
+			String sql = "SELECT * FROM size_price";
+
+			PreparedStatement pSmt = conn.prepareStatement(sql);
+
+			ResultSet rs = pSmt.executeQuery();
+
+			while(rs.next()) {
+				SizePrice s = new SizePrice();
+				s.setSize_price_cd(rs.getInt("size_price_cd"));
+				s.setHeight(rs.getInt("height"));
+				s.setWidth(rs.getInt("width"));
+				s.setPrice(rs.getInt("price"));
+				size_priceList.add(s);
+			}
+
+			rs.close();
+			pSmt.close(); // Close Statement
+
+		} catch (SQLException e) {
+			e.getStackTrace();
+			return null;
+		}finally {
+			if (conn != null) {
+				try {
+					conn.close();
+
+				} catch (SQLException e) {
+					e.printStackTrace();
+					return size_priceList;
+				}
+			}
+
+		}
+		return size_priceList;
 	}
 }

@@ -98,7 +98,7 @@
         </tr>
         <tr>
           <th>価格</th>
-          <td><%=cart.getPrice() * cart.getQuantity()%>円</td>
+          <td><%=cart.getPrice() * cart.getQuantity()%>円（税込）</td>
         </tr>
       </tbody>
     </table>
@@ -110,7 +110,7 @@
   <table>
     <tr>
       <th>合計金額</th>
-      <td><%=totalPrice%>円</td>
+      <td><%=totalPrice%>円（税込）</td>
     </tr>
   </table>
 

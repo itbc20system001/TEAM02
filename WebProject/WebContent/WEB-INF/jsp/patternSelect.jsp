@@ -44,7 +44,7 @@ section {
 
      <% for(int i=0;i<sizePriceList.size();i++){%>
      case <%=i+1%>:
-         target.innerHTML = "<%= sizePriceList.get(i).getPrice()%>円<br>";
+         target.innerHTML = "<%= sizePriceList.get(i).getPrice()%>円（税込）<br>";
          break;
      <% } %>
 

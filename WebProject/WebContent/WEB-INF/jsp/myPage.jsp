@@ -87,7 +87,7 @@
     </tr>
     <tr>
       <th>合計金額</th>
-      <td><%=orderMain.getTotal() + "円"%></td>
+      <td><%=orderMain.getTotal() + "円（税込）"%></td>
     </tr>
     <tr>
       <th></th>

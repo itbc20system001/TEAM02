@@ -67,9 +67,9 @@
       <td>
         <%
         	if (orderDesc.isLiner_flg()) {
-        %>有り<%
+        %>あり<%
         	} else {
-        %>無し<%
+        %>なし<%
         	}
         %>
       </td>
@@ -89,7 +89,7 @@
     </tr>
 
     <tr>
-      <th>個数</th>
+      <th>数量</th>
       <td><%=orderDesc.getQuantity() + "点"%></td>
     </tr>
 

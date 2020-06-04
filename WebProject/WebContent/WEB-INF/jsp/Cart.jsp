@@ -58,18 +58,15 @@ for(Cart c:cartList){ %>
   </td>
 </tr>
 <tr>
-<th>サイズ縦</th>
-<td>丈<%=sizePriceList.get(i).getHeight() + "cm"%></td>
+<th>サイズ</th>
+<td>丈<%=sizePriceList.get(i).getHeight() + "cm"%><br>
 <!--  <td><%=c.getSize_price_cd() %></td>  -->
-</tr>
-<tr>
-<th>サイズ横</th>
-<td>幅<%=sizePriceList.get(i).getWidth() + "cm"%></td>
+幅<%=sizePriceList.get(i).getWidth() + "cm"%></td>
 <!-- <td><%=c.getSize_price_cd() %></td>  -->
 </tr>
 <tr>
-<th>裏地の有無</th>
-<td><% if(c.isHook_flg()){ %>有り<%} else { %>無し<%} %></td>
+<th>裏地</th>
+<td><% if(c.isHook_flg()){ %>あり<%} else { %>なし<%} %></td>
 </tr>
 <tr>
 <th>タイプ</th>
@@ -77,7 +74,7 @@ for(Cart c:cartList){ %>
 </tr>
 <tr>
 <th>数量</th>
-<td><%=c.getQuantity() %></td>
+<td><%=c.getQuantity() %>点</td>
 </tr>
 <tr>
 <th>単価</th>

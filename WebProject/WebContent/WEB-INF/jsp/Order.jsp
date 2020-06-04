@@ -44,14 +44,14 @@
   </header>
 
   <main>
-    <h1>ご注文内容確認</h1>
+  <h1>ご注文内容確認</h1>
 
-    <h2>商品詳細</h2>
+  <h2>商品詳細</h2>
   <div class="contents">
     <%
-  	int i = 0;
-  	for (Cart cart : cartList) {
-  %>
+    	int i = 0;
+    	for (Cart cart : cartList) {
+    %>
     商品<%=i + 1%>
     <table>
       <tbody>
@@ -64,40 +64,37 @@
 
         </tr>
         <tr>
-          <th>丈</th>
-          <td><%=sizePriceList.get(i).getHeight()%>cm</td>
-        </tr>
-        <tr>
-          <th>幅</th>
-          <td><%=sizePriceList.get(i).getWidth()%>cm</td>
-        </tr>
-        <tr>
-          <th>フックの有無</th>
-          <td>
-            <%
-          	if (cart.isHook_flg()) {
-          %>有り<%
-          	} else {
-          %>無し<%
-          	}
-          %>
+          <th>サイズ</th>
+          <td>丈<%=sizePriceList.get(i).getHeight()%>cm<br> 幅<%=sizePriceList.get(i).getWidth()%>cm
           </td>
         </tr>
         <tr>
-          <th>裏地の有無</th>
+          <th>裏地</th>
           <td>
             <%
-          	if (cart.isLiner_flag()) {
-          %>有り<%
-          	} else {
-          %>無し<%
-          	}
-          %>
+            	if (cart.isLiner_flag()) {
+            %>あり<%
+            	} else {
+            %>なし<%
+            	}
+            %>
+          </td>
+        </tr>
+        <tr>
+          <th>タイプ</th>
+          <td>
+            <%
+            	if (cart.isHook_flg()) {
+            %>レールが隠れる<%
+            	} else {
+            %>レールが隠れない<%
+            	}
+            %>
           </td>
         </tr>
         <tr>
           <th>数量</th>
-          <td><%=cart.getQuantity()%></td>
+          <td><%=cart.getQuantity()%>点</td>
         </tr>
         <tr>
           <th>価格</th>
@@ -107,9 +104,9 @@
     </table>
   </div>
   <%
-      	i++;
-      	}
-      %>
+  	i++;
+  	}
+  %>
   <table>
     <tr>
       <th>合計金額</th>
@@ -118,7 +115,7 @@
   </table>
 
 
-    <h1>お届け情報</h1>
+  <h1>お届け情報</h1>
   <div class="contents">
     <table>
       <tbody>
@@ -139,24 +136,24 @@
 
 
   <h1>ご請求情報</h1>
-<div class="contents">
-  <table>
-    <tbody>
-      <tr>
-        <th>ご請求先</th>
-        <td>お届け先と同じ</td>
-      </tr>
-      <tr>
-        <th>お支払い方法</th>
-        <td>クレジットカード決済(**** **** **** <%=c.getCreditCard().substring(c.getCreditCard().length() - 4)%>)
-        </td>
-    </tbody>
-  </table>
-</div>
+  <div class="contents">
+    <table>
+      <tbody>
+        <tr>
+          <th>ご請求先</th>
+          <td>お届け先と同じ</td>
+        </tr>
+        <tr>
+          <th>お支払い方法</th>
+          <td>クレジットカード決済(**** **** **** <%=c.getCreditCard().substring(c.getCreditCard().length() - 4)%>)
+          </td>
+      </tbody>
+    </table>
+  </div>
 
   <form action="/rideau/OrderConfirmation" method="post">
-  <div class="submitStyle">
-    <input type="submit" value="注文確定" class="button">
+    <div class="submitStyle">
+      <input type="submit" value="注文確定" class="button">
     </div>
   </form>
 

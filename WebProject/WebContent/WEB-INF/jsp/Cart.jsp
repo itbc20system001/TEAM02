@@ -78,11 +78,11 @@ for(Cart c:cartList){ %>
 </tr>
 <tr>
 <th>単価</th>
-<td><%=c.getPrice() %>円</td>
+<td><%=c.getPrice() %>円（税込）</td>
 </tr>
 <tr>
 <th>合計金額</th>
-<td><%=c.getPrice()*c.getQuantity() %>円</td>
+<td><%=c.getPrice()*c.getQuantity() %>円（税込）</td>
 </tr>
 <tr>
 <th>削除</th>
